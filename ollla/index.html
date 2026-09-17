@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OLLLA NUTRITION</title>
+<meta name="description" content="OLLLA NUTRITION — 韩国运动营养品牌 / Korean sports nutrition. 两项世界首创技术。">
+<meta property="og:title" content="OLLLA NUTRITION — 韩国运动营养">
+<meta property="og:description" content="pH响应型水凝胶 · 低渗透压电解质。两项世界首创技术。">
+<meta property="og:type" content="website">
+<style>
+:root{
+  --bg:#0a0a0c; --bg2:#121216; --card:#17171c; --line:#26262e;
+  --fg:#f4f4f6; --mut:#9a9aa6; --dim:#6e6e7a;
+  --acc:#ff2b55; --acc2:#00d6c2;
+  --pad:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg); color:var(--fg);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC","Malgun Gothic","Helvetica Neue",Arial,sans-serif;
+  line-height:1.65; -webkit-font-smoothing:antialiased;
+  font-size:15px; overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+
+/* ---------- language switch ---------- */
+body.lang-zh [data-en]{display:none !important}
+body.lang-en [data-zh]{display:none !important}
+
+/* ---------- layout ---------- */
+.wrap{max-width:780px;margin:0 auto;padding:0 var(--pad)}
+section{padding:54px 0 10px;break-inside:avoid}
+section+section{border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:8px}
+.sec-no{font-size:11px;letter-spacing:.22em;color:var(--acc);font-weight:700;font-variant-numeric:tabular-nums}
+.sec-kicker{font-size:11px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase;font-weight:600}
+h2{font-size:27px;line-height:1.25;letter-spacing:-.01em;font-weight:800;margin:6px 0 14px}
+h3{font-size:17px;font-weight:750;letter-spacing:-.005em;margin:0 0 6px}
+p{color:var(--mut)}
+.lede{font-size:15.5px;color:#c9c9d2;margin-bottom:26px}
+
+/* ---------- top bar ---------- */
+.top{position:sticky;top:0;z-index:50;background:rgba(10,10,12,.86);backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top-in{max-width:780px;margin:0 auto;padding:11px var(--pad);display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:17px;font-weight:900;letter-spacing:.14em}
+.logo i{font-style:normal;color:var(--acc)}
+.langsw{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--bg2)}
+.langsw button{background:none;border:0;color:var(--dim);font:inherit;font-size:12px;font-weight:700;
+  padding:6px 14px;cursor:pointer;letter-spacing:.04em}
+.langsw button.on{background:var(--acc);color:#fff}
+
+/* ---------- hero ---------- */
+.hero{padding:40px 0 30px;text-align:left}
+.tagline{font-size:11px;letter-spacing:.2em;color:var(--acc);font-weight:700;text-transform:uppercase;margin-bottom:14px}
+.hero h1{font-size:34px;line-height:1.18;font-weight:900;letter-spacing:-.02em;margin-bottom:14px}
+.hero h1 em{font-style:normal;color:var(--acc)}
+.hero p{font-size:15.5px;color:#c4c4cf;max-width:42em}
+.hero-img{margin:26px -6px 0;background:#fff;border-radius:14px;padding:16px 10px}
+.meta-line{margin-top:18px;font-size:12px;color:var(--dim);letter-spacing:.02em}
+
+/* ---------- stats ---------- */
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:24px 0 8px}
+.stat{background:var(--bg2);padding:16px 14px}
+.stat b{display:block;font-size:24px;font-weight:900;letter-spacing:-.02em;color:#fff;line-height:1.1}
+.stat b small{font-size:13px;font-weight:700;color:var(--mut)}
+.stat span{display:block;font-size:11.5px;color:var(--dim);margin-top:5px;line-height:1.45}
+
+/* ---------- principle list ---------- */
+.rules{margin-top:26px;border-top:1px solid var(--line)}
+.rule{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.rule i{font-style:normal;font-size:11px;font-weight:800;color:var(--acc);letter-spacing:.1em;padding-top:4px;flex:0 0 26px}
+.rule h4{font-size:14.5px;font-weight:700;margin-bottom:2px}
+.rule p{font-size:13px;line-height:1.55}
+
+/* ---------- tech ---------- */
+.tech{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 18px;margin-top:22px}
+.badge{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  padding:4px 9px;border-radius:999px;background:var(--acc);color:#fff;margin-bottom:11px}
+.badge.alt{background:var(--acc2);color:#04302c}
+.tech h3{font-size:19px;margin-bottom:9px}
+.tech>p{font-size:13.5px}
+.flow{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px}
+.step{background:var(--bg);border:1px solid var(--line);border-radius:11px;padding:12px 12px 13px}
+.step b{display:block;font-size:10.5px;letter-spacing:.14em;color:var(--acc);font-weight:800;margin-bottom:5px}
+.step span{font-size:12.5px;color:#cfcfd8;line-height:1.5;display:block}
+.blob{background:#fff;border-radius:12px;margin:18px 0 4px;padding:8px}
+.osmo{display:flex;align-items:flex-end;gap:16px;margin:16px 0 6px;flex-wrap:wrap}
+.osmo div b{font-size:32px;font-weight:900;letter-spacing:-.03em;color:var(--acc2);line-height:1;white-space:nowrap}
+.osmo div b small{font-size:13px;color:var(--mut);font-weight:700}
+.osmo div span{display:block;font-size:11.5px;color:var(--dim);margin-top:4px}
+
+/* ---------- compare table ---------- */
+table{width:100%;border-collapse:collapse;margin-top:20px;font-size:12.5px}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);font-weight:700;
+  border-bottom:1px solid var(--line)}
+thead th:last-child{color:var(--acc)}
+td:first-child{color:var(--dim);white-space:nowrap;width:24%}
+td:last-child{color:#fff;font-weight:600}
+td:nth-child(2){color:var(--mut)}
+
+/* ---------- product grid ---------- */
+.gridlbl{display:flex;align-items:center;gap:10px;margin:30px 0 14px}
+.gridlbl span{font-size:11px;letter-spacing:.18em;font-weight:800;color:var(--acc);text-transform:uppercase;white-space:nowrap}
+.gridlbl hr{flex:1;border:0;border-top:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.p{background:var(--card);border:1px solid var(--line);border-radius:13px;overflow:hidden;display:flex;flex-direction:column;break-inside:avoid}
+.p .ph{background:#fff;height:132px;display:flex;align-items:center;justify-content:center;padding:10px}
+.p .ph img{max-height:112px;width:auto;object-fit:contain}
+.p .tx{padding:11px 12px 13px;flex:1;display:flex;flex-direction:column}
+.p h4{font-size:13.5px;font-weight:750;line-height:1.3;margin-bottom:5px}
+.p .ing{font-size:11.5px;color:var(--mut);line-height:1.45;margin-bottom:auto}
+.p .fl{font-size:11px;color:var(--dim);margin-top:7px;line-height:1.4}
+.p .pr{display:flex;align-items:baseline;justify-content:space-between;gap:6px;margin-top:9px;
+  padding-top:8px;border-top:1px solid var(--line)}
+.p .pr em{font-style:normal;font-size:10.5px;color:var(--dim)}
+.p .pr b{font-size:13px;font-weight:800;color:#fff;letter-spacing:-.01em}
+.p .pr b.ask{font-size:11px;color:var(--acc2);font-weight:700}
+.tagw{position:absolute}
+.first{border-color:#3a2030}
+.first .ph{box-shadow:inset 0 -3px 0 var(--acc)}
+
+/* ---------- packs ---------- */
+.packs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
+.pack{background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:12px}
+.pack b{display:block;font-size:13px;font-weight:750;margin-bottom:3px}
+.pack span{font-size:11.5px;color:var(--dim);line-height:1.45}
+
+/* ---------- coming soon ---------- */
+.soon{background:linear-gradient(160deg,#1a1020,#101016);border:1px solid #2e1f33;border-radius:16px;
+  padding:22px 18px;margin-top:30px}
+.soon .badge{background:#fff;color:#0a0a0c}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.chip{font-size:11.5px;padding:6px 11px;border:1px solid var(--line);border-radius:999px;color:#c9c9d2;background:#00000040}
+.chip.w{border-color:#2f4d49;color:#7fe3d8}
+.mkt{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);
+  border-radius:12px;overflow:hidden;margin-top:18px}
+.mkt div{background:var(--bg2);padding:13px 10px;text-align:center}
+.mkt b{display:block;font-size:19px;font-weight:900;color:var(--acc2);letter-spacing:-.02em}
+.mkt span{display:block;font-size:10.5px;color:var(--dim);margin-top:4px;line-height:1.4}
+
+/* ---------- terms ---------- */
+.terms{border-top:1px solid var(--line);margin-top:22px}
+.term{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.term dt{flex:0 0 32%;font-size:12px;color:var(--dim);font-weight:600;line-height:1.5}
+.term dd{flex:1;font-size:13.5px;color:#eaeaf0;font-weight:600;line-height:1.5}
+.term dd small{display:block;font-weight:400;color:var(--mut);font-size:12px;margin-top:2px}
+.support{display:flex;gap:10px;margin-top:16px}
+.support div{flex:1;background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:13px;text-align:center}
+.support b{display:block;font-size:22px;font-weight:900;color:var(--acc);letter-spacing:-.02em}
+.support span{display:block;font-size:11px;color:var(--dim);margin-top:3px}
+
+/* ---------- contact ---------- */
+.contact{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 18px;margin-top:26px}
+.contact .co{font-size:11px;letter-spacing:.18em;color:var(--acc);font-weight:800;text-transform:uppercase;margin-bottom:9px}
+.contact h3{font-size:20px;margin-bottom:4px}
+.contact .role{font-size:12.5px;color:var(--mut);margin-bottom:16px}
+.cc{border-top:1px solid var(--line)}
+.cc a,.cc div{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);
+  color:#eaeaf0;text-decoration:none;font-size:13.5px;align-items:center}
+.cc b{flex:0 0 74px;font-size:11px;color:var(--dim);font-weight:600;letter-spacing:.04em}
+.cc a span{color:#fff;font-weight:600;word-break:break-all}
+.cc div span{color:var(--mut)}
+
+.dl{display:flex;gap:9px;margin-top:15px;flex-wrap:wrap}
+.dl a{flex:1;min-width:150px;text-align:center;padding:11px 12px;border:1px solid var(--line);
+  border-radius:10px;background:var(--bg2);color:#fff;text-decoration:none;font-size:12.5px;font-weight:650}
+.dl a:active{background:var(--acc);border-color:var(--acc)}
+body.pdfmode .dl{display:none}
+footer{padding:30px 0 46px;text-align:center;color:var(--dim);font-size:11px;line-height:1.7}
+footer b{color:var(--mut);font-weight:700;letter-spacing:.14em;display:block;margin-bottom:6px}
+.note{font-size:10.5px;color:#55555f;line-height:1.6;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+
+/* ---------- wider screens ---------- */
+@media (min-width:560px){
+  body{font-size:15.5px}
+  .hero h1{font-size:44px}
+  h2{font-size:31px}
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .flow{grid-template-columns:repeat(4,1fr)}
+  .packs{grid-template-columns:repeat(3,1fr)}
+  section{padding:66px 0 14px}
+}
+
+/* ---------- compact layout used only for the downloadable PDF ---------- */
+body.pdfmode{font-size:11.4px}
+body.pdfmode .top{display:none}
+body.pdfmode .wrap{max-width:none;padding:0 16px}
+body.pdfmode section{padding:14px 0 4px;break-inside:auto}
+body.pdfmode .p1{display:grid;grid-template-columns:1.06fr 1fr;gap:30px;align-items:start;break-inside:avoid}
+body.pdfmode .p1 #s01{padding-top:4px;border-top:0}
+body.pdfmode .p1 .hero{padding:4px 0 0}
+body.pdfmode .p1 .rules{grid-template-columns:1fr;column-gap:0}
+body.pdfmode .dealwrap{display:block}
+
+body.pdfmode .dealside{display:grid;grid-template-columns:1fr 1.15fr;gap:14px;align-items:start;margin-top:12px}
+body.pdfmode .dealside .support{flex-direction:column;margin-top:0}
+body.pdfmode .dealside .contact{margin-top:0}
+body.pdfmode .p,body.pdfmode .pack,body.pdfmode .contact,body.pdfmode .stats,
+body.pdfmode .support,body.pdfmode .step,body.pdfmode .rule,body.pdfmode .term,
+body.pdfmode .gridlbl,body.pdfmode tr{break-inside:avoid}
+body.pdfmode .gridlbl,body.pdfmode h2,body.pdfmode .sec-head{break-after:avoid}
+body.pdfmode .packlbl,body.pdfmode .packs,body.pdfmode .blob{display:none}
+body.pdfmode .rules{display:grid;grid-template-columns:1fr 1fr;column-gap:26px;border-top:0}
+
+body.pdfmode .cmp{margin-top:12px}
+body.pdfmode .terms{display:grid;grid-template-columns:1fr 1fr;column-gap:26px;border-top:0}
+body.pdfmode #s02,body.pdfmode #s03,body.pdfmode #s04{border-top:0}
+body.pdfmode .hero{padding:4px 0 12px}
+body.pdfmode .hero h1{font-size:27px;margin-bottom:9px}
+body.pdfmode .hero p{font-size:12.5px;max-width:64em}
+body.pdfmode .hero-img{margin:12px 0 0;padding:6px}
+body.pdfmode .hero-img img{max-height:140px;width:auto;margin:0 auto}
+body.pdfmode .meta-line{margin-top:10px}
+body.pdfmode h2{font-size:23px;margin:3px 0 7px}
+body.pdfmode h2 br{display:none}
+body.pdfmode .lede{font-size:12.5px;margin-bottom:13px;max-width:74em}
+body.pdfmode .stats{margin:14px 0 0}
+body.pdfmode .stat{padding:10px}
+body.pdfmode .rules{margin-top:14px}
+body.pdfmode .rule{padding:7px 0}
+body.pdfmode .rule p{font-size:11.5px}
+body.pdfmode .techs{display:block}
+body.pdfmode .tech{padding:16px;margin-top:12px}
+body.pdfmode .tech>p{font-size:11.8px}
+body.pdfmode .blob img{max-height:112px;margin:0 auto;width:auto}
+body.pdfmode .flow{grid-template-columns:repeat(4,1fr);gap:7px;margin-top:11px}
+body.pdfmode .step span{font-size:11px}
+body.pdfmode table{font-size:11px;margin-top:14px}
+body.pdfmode th,body.pdfmode td{padding:7px 6px}
+body.pdfmode .osmo{margin:12px 0 2px;gap:12px}
+body.pdfmode .osmo div b{font-size:27px}
+body.pdfmode .gridlbl{margin:18px 0 9px}
+body.pdfmode .grid{gap:7px}
+body.pdfmode .grid.gh{grid-template-columns:repeat(5,1fr)}
+body.pdfmode .grid.gn{grid-template-columns:repeat(6,1fr)}
+body.pdfmode .p .ph{height:84px;padding:6px}
+body.pdfmode .p .ph img{max-height:72px}
+body.pdfmode .p .tx{padding:9px 9px 10px}
+body.pdfmode .p h4{font-size:11.5px}
+body.pdfmode .p .ing{font-size:9.8px;line-height:1.4}
+body.pdfmode .p .fl{font-size:9.4px;margin-top:5px}
+body.pdfmode .p .pr{margin-top:7px;padding-top:6px}
+body.pdfmode .p .pr b{font-size:11.5px}
+body.pdfmode .p .pr em{font-size:9px}
+body.pdfmode .packs{grid-template-columns:repeat(5,1fr);gap:7px}
+body.pdfmode .pack{padding:10px}
+body.pdfmode .pack b{font-size:11.5px}
+body.pdfmode .pack span{font-size:10px}
+body.pdfmode .soon{margin-top:8px;padding:15px}
+body.pdfmode .chip{font-size:10px;padding:4px 8px}
+body.pdfmode .terms{margin-top:14px}
+body.pdfmode .term{padding:6px 0}
+body.pdfmode .term dd{font-size:12px}
+body.pdfmode .term dd small{font-size:10.5px}
+body.pdfmode .support{margin-top:12px}
+body.pdfmode .contact{margin-top:12px;padding:15px}
+body.pdfmode footer{padding:14px 0 2px}
+body.pdfmode .note{font-size:8.6px;margin-top:10px;padding-top:9px}
+
+/* ---------- pagination ---------- */
+@page{size:A4;margin:11mm 9mm}
+
+/* ---------- printing on paper: light version ---------- */
+@media print{
+  :root{--bg:#fff;--bg2:#f7f7f9;--card:#fff;--line:#dcdce3;--fg:#111;--mut:#555;--dim:#888}
+  body{font-size:10.5pt}
+  .top{display:none}
+  .hero-img,.p .ph,.blob{background:#fff}
+}
+</style>
+</head>
+<body class="lang-zh">
+
+<div class="top">
+  <div class="top-in">
+    <div class="logo">OL<i>L</i>LA</div>
+    <div class="langsw">
+      <button id="bzh" class="on" onclick="setLang('zh')">中文</button>
+      <button id="ben" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<div class="p1">
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="tagline" data-zh>韩国运动营养 · 自主研发生产</div>
+  <div class="tagline" data-en>Korean Sports Nutrition · Developed &amp; Made In-House</div>
+
+  <h1 data-zh>两项<em>世界首创</em>技术，<br>重新定义运动补给。</h1>
+  <h1 data-en>Two <em>world-first</em> technologies,<br>rebuilding sports fuel.</h1>
+
+  <p data-zh>OLLLA 不做代工外包。配方、质地与包装形态由自己的工厂完成 —— 这让我们做出了别人做不出的两样东西：胃中不崩解的 pH 响应型水凝胶能量胶，以及 149 mOsm/kg 的低渗透压电解质能量饮。</p>
+  <p data-en>OLLLA does not outsource. Formulation, texture and format all happen in our own factory — which is how we built two things nobody else has: a pH-responsive hydrogel energy gel that does not break down in the stomach, and a 149 mOsm/kg hypotonic electrolyte energy drink.</p>
+
+  <div class="hero-img"><img src="img/hero-lineup.jpg" alt="OLLLA product lineup" loading="eager"></div>
+
+  <div class="meta-line" data-zh>OLLLA NUTRITION · 韩国京畿道杨州市 · HACCP 认证工厂 · 2021年创立</div>
+  <div class="meta-line" data-en>OLLLA NUTRITION · Yangju, Gyeonggi-do, South Korea · HACCP-certified plant · Est. 2021</div>
+</div>
+
+<!-- ============ 01 BRAND ============ -->
+<section id="s01">
+  <div class="sec-head">
+    <span class="sec-no">01</span>
+    <span class="sec-kicker" data-zh>品牌</span>
+    <span class="sec-kicker" data-en>Brand</span>
+  </div>
+  <h2 data-zh>不妥协的自主生产。</h2>
+  <h2 data-en>Self-production, without compromise.</h2>
+  <p class="lede" data-zh>7年运动营养流通经验之上，2021年建立自有生产体系。从原料选择到出厂，全程由自己决定 —— 这不是成本考量，而是为了能做出市面上还不存在的产品。</p>
+  <p class="lede" data-en>Seven years distributing sports nutrition, then our own production line from 2021. From raw material selection to shipment, every decision stays in-house — not to cut cost, but to make products that do not exist yet.</p>
+
+  <div class="stats">
+    <div class="stat">
+      <b>2</b>
+      <span data-zh>世界首创技术</span><span data-en>World-first technologies</span>
+    </div>
+    <div class="stat">
+      <b>6</b>
+      <span data-zh>产品类别整合</span><span data-en>Product categories in one brand</span>
+    </div>
+    <div class="stat">
+      <b>34<small></small></b>
+      <span data-zh>签约运动员 · 教练</span><span data-en>Sponsored athletes &amp; coaches</span>
+    </div>
+    <div class="stat">
+      <b>24<small>&nbsp;月</small></b>
+      <span data-zh>常温保质期 · 无防腐剂</span><span data-en>Months shelf life · no preservatives</span>
+    </div>
+  </div>
+
+  <div class="rules">
+    <div class="rule"><i>01</i><div>
+      <h4 data-zh>自主生产，不做代工外包</h4><h4 data-en>Made by us, not by a contract manufacturer</h4>
+      <p data-zh>原料选择与配方方向由自己决定，市场反馈可以直接进入下一批产品。</p>
+      <p data-en>We choose the ingredients and set the formulation direction, so field feedback reaches the next production run directly.</p>
+    </div></div>
+    <div class="rule"><i>02</i><div>
+      <h4 data-zh>多品种小批量，按订单生产</h4><h4 data-en>Many SKUs, small batches, made to order</h4>
+      <p data-zh>不做大库存压货，保证到货新鲜度，也让新市场的试单变得容易。</p>
+      <p data-en>No large standing stock. Product arrives fresh, and a trial order into a new market stays easy.</p>
+    </div></div>
+    <div class="rule"><i>03</i><div>
+      <h4 data-zh>全线产品公开生产日期</h4><h4 data-en>Production date printed on every product</h4>
+      <p data-zh>所有产品标注生产日期，流通环节的信息透明。</p>
+      <p data-en>Every unit carries its production date — full transparency down the channel.</p>
+    </div></div>
+    <div class="rule"><i>04</i><div>
+      <h4 data-zh>无人工防腐剂</h4><h4 data-en>No artificial preservatives</h4>
+      <p data-zh>通过灭菌工艺，在不添加防腐剂的前提下实现24个月常温保质期。</p>
+      <p data-en>A sterilization process delivers 24 months at ambient temperature with no preservatives added.</p>
+    </div></div>
+  </div>
+</section>
+</div>
+
+<!-- ============ 02 TECHNOLOGY ============ -->
+<section id="s02">
+  <div class="sec-head">
+    <span class="sec-no">02</span>
+    <span class="sec-kicker" data-zh>核心技术</span>
+    <span class="sec-kicker" data-en>Core Technology</span>
+  </div>
+  <h2 data-zh>为什么吃了能量胶<br>胃里会不舒服？</h2>
+  <h2 data-en>Why does an energy gel<br>upset your stomach?</h2>
+  <p class="lede" data-zh>普通能量胶是「高渗」产品。高浓度碳水一进胃就散开，会把周围的水分拉过来平衡浓度。而运动时流向胃肠的血液本来就减少 —— 胀气、烧心、不适就是这样来的。</p>
+  <p class="lede" data-en>A normal energy gel is a hypertonic product. Concentrated carbohydrate disperses as soon as it hits the stomach and pulls water in to balance concentration. During exercise, blood flow to the gut is already reduced — that is where the bloating and discomfort come from.</p>
+
+  <div class="techs">
+  <!-- tech 1 -->
+  <div class="tech">
+    <span class="badge" data-zh>世界首创</span><span class="badge" data-en>World First</span>
+    <h3 data-zh>pH 响应型水凝胶 · Hydro Energy Gel</h3>
+    <h3 data-en>pH-Responsive Hydrogel · Hydro Energy Gel</h3>
+    <p data-zh>OLLLA 把碳水包裹进一层水凝胶结构里，利用人体不同部位的 pH 环境差异，控制碳水的释放时机 —— 在胃里保持凝胶不崩解，到小肠才打开。</p>
+    <p data-en>OLLLA encapsulates the carbohydrate inside a gel structure and uses the pH difference between stomach and small intestine to control when it is released — the gel holds in the stomach and only opens further down.</p>
+    <div class="blob"><img src="img/hydrogel-blob.jpg" alt="OLLLA hydrogel structure"></div>
+    <div class="flow">
+      <div class="step"><b data-zh>1 入口</b><b data-en>1 INTAKE</b>
+        <span data-zh>柔软的水凝胶质地，运动中易于吞咽</span><span data-en>Soft hydrogel texture, easy to take mid-effort</span></div>
+      <div class="step"><b data-zh>2 胃中</b><b data-en>2 STOMACH</b>
+        <span data-zh>酸性环境下凝胶结构保持不崩解</span><span data-en>The gel structure holds in the acidic environment</span></div>
+      <div class="step"><b data-zh>3 小肠</b><b data-en>3 SMALL INTESTINE</b>
+        <span data-zh>pH 环境改变，凝胶开始崩解</span><span data-en>pH changes and the gel begins to break down</span></div>
+      <div class="step"><b data-zh>4 释放</b><b data-en>4 RELEASE</b>
+        <span data-zh>碳水在小肠释放并被吸收</span><span data-en>Carbohydrate is released and absorbed</span></div>
+    </div>
+  </div>
+
+  <div class="cmp">
+    <table>
+      <thead><tr>
+        <th></th>
+        <th data-zh>普通能量胶</th><th data-en>Normal energy gel</th>
+        <th data-zh>OLLLA 水凝胶</th><th data-en>OLLLA hydrogel</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td data-zh>胃中状态</td><td data-en>In the stomach</td>
+          <td data-zh>高浓度碳水直接暴露</td><td data-en>Concentrated carbs exposed at once</td>
+          <td data-zh>保持凝胶结构</td><td data-en>Gel structure maintained</td></tr>
+        <tr>
+          <td data-zh>胃部负担</td><td data-en>Gut load</td>
+          <td data-zh>可能出现胀气 · 不适</td><td data-en>Bloating / discomfort possible</td>
+          <td data-zh>以减轻负担为设计目标</td><td data-en>Designed to reduce it</td></tr>
+        <tr>
+          <td data-zh>能量供给</td><td data-en>Energy delivery</td>
+          <td data-zh>急速供给，血糖波动大</td><td data-en>Fast spike, larger swing</td>
+          <td data-zh>持续分解、持续供给</td><td data-en>Gradual, sustained release</td></tr>
+        <tr>
+          <td data-zh>适合项目</td><td data-en>Best for</td>
+          <td data-zh>短距离 · 峰值冲刺 · 力量训练</td><td data-en>Short distance, sprints, lifting</td>
+          <td data-zh>马拉松 · 骑行 · 铁三 · 越野跑</td><td data-en>Marathon, cycling, triathlon, trail</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- tech 2 -->
+  <div class="tech">
+    <span class="badge alt" data-zh>独家开发</span><span class="badge alt" data-en>Exclusive</span>
+    <h3>HYPOTONIC 100</h3>
+    <p data-zh>运动中补水，低渗透压比等渗更有利。HYPOTONIC 100 的渗透压为 149 mOsm/kg，远低于人体体液的 275~295 mOsm/kg —— 在胃里停留时间短、晃动感小，到小肠后靠「碳水 + 钠共同转运」把水一起带进体内。</p>
+    <p data-en>For hydration during exercise, hypotonic beats isotonic. HYPOTONIC 100 measures 149 mOsm/kg against body fluid at 275–295 mOsm/kg — less time sitting in the stomach, less sloshing, and carbohydrate–sodium co-transport carrying water across in the small intestine.</p>
+    <div class="osmo">
+      <div><b>149<small>&nbsp;mOsm/kg</small></b>
+        <span data-zh>低渗透压 · 体液为 275~295</span><span data-en>Hypotonic · body fluid 275–295</span></div>
+      <div><b>100<small>&nbsp;kcal</small></b>
+        <span data-zh>一份的运动能量</span><span data-en>Energy per serving</span></div>
+      <div><b>4<small>&nbsp;<span data-zh>种</span><span data-en>types</span></small></b>
+        <span data-zh>运动中流失的电解质</span><span data-en>Electrolytes lost in sweat</span></div>
+    </div>
+    <div class="flow">
+      <div class="step"><b data-zh>水分</b><b data-en>WATER</b>
+        <span data-zh>补充随汗液流失的水分</span><span data-en>Replaces what sweat takes out</span></div>
+      <div class="step"><b data-zh>电解质</b><b data-en>ELECTROLYTES</b>
+        <span data-zh>帕拉金糖 + 氨基酸 + 喜马拉雅粉盐</span><span data-en>Palatinose + amino acids + Himalayan pink salt</span></div>
+      <div class="step"><b data-zh>能量</b><b data-en>ENERGY</b>
+        <span data-zh>只喝水补不到的 100 kcal</span><span data-en>The 100 kcal plain water cannot give</span></div>
+      <div class="step"><b data-zh>饮用法</b><b data-en>HOW TO USE</b>
+        <span data-zh>运动中每小时 500mL，分次少量</span><span data-en>500 mL per hour, sipped through the effort</span></div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ============ 03 PRODUCTS ============ -->
+<section id="s03">
+  <div class="sec-head">
+    <span class="sec-no">03</span>
+    <span class="sec-kicker" data-zh>产品线</span>
+    <span class="sec-kicker" data-en>Lineup</span>
+  </div>
+  <h2 data-zh>从训练到比赛，<br>全线覆盖。</h2>
+  <h2 data-en>Training day<br>to race day.</h2>
+  <p class="lede" data-zh>下列为出口规格与建议零售价（USD）。经销价格及条件请另行索取报价单。</p>
+  <p class="lede" data-en>Export pack configuration with suggested retail price in USD. Distributor pricing is quoted separately on request.</p>
+
+  <div class="gridlbl"><span data-zh>水凝胶系列 · 世界首创</span><span data-en>Hydrogel Line · World First</span><hr></div>
+  <div class="grid gh">
+    <div class="p first"><div class="ph"><img src="img/gel-120-cola.jpg" alt="120 Hydro Energy Gel"></div><div class="tx">
+      <h4>120 Hydro Energy Gel</h4>
+      <div class="ing" data-zh>龙舌兰糖浆 + 麦芽糊精 · 45g / 100kcal</div>
+      <div class="ing" data-en>Agave syrup + maltodextrin · 45g / 100kcal</div>
+      <div class="fl" data-zh>可乐 · 苹果薄荷 · 水蜜桃 · 草莓 / 10支盒装</div>
+      <div class="fl" data-en>Cola · Apple Mint · Peach · Strawberry / 10 per box</div>
+      <div class="pr"><em data-zh>建议零售</em><em data-en>MSRP</em><b>$17.00</b></div>
+    </div></div>
+
+    <div class="p first"><div class="ph"><img src="img/gel-amino3000.jpg" alt="Amino 3000 Hydro Energy Gel"></div><div class="tx">
+      <h4>Amino 3000 Hydro Gel</h4>
+      <div class="ing" data-zh>碳水 + 丙氨酸 + 脯氨酸 · 供能与肌肉恢复同时进行</div>
+      <div class="ing" data-en>Carbs + alanine + proline · energy and muscle recovery together</div>
+      <div class="fl" data-zh>青苹果 / 7支盒装</div>
+      <div class="fl" data-en>Green Apple / 7 per box</div>
+      <div class="pr"><em data-zh>建议零售</em><em data-en>MSRP</em><b>$17.00</b></div>
+    </div></div>
+
+    <div class="p first"><div class="ph"><img src="img/gel-palatinose.jpg" alt="Palatinose Hydro Energy Gel"></div><div class="tx">
+      <h4>Palatinose Hydro Gel</h4>
+      <div class="ing" data-zh>100% 帕拉金糖（异麦芽酮糖）· 低 GI 持久供能</div>
+      <div class="ing" data-en>100% Palatinose (isomaltulose) · low-GI sustained energy</div>
+      <div class="fl" data-zh>西柚 · 柠檬 / 7支盒装</div>
+      <div class="fl" data-en>Grapefruit · Lemon / 7 per box</div>
+      <div class="pr"><em data-zh>建议零售</em><em data-en>MSRP</em><b>$11.90</b></div>
+    </div></div>
+
+    <div class="p first"><div class="ph"><img src="img/gel-bite.jpg" alt="120 Bite Hydro Energy Gel"></div><div class="tx">
+      <h4>120 Bite Hydro Gel</h4>
+      <div class="ing" data-zh>麦芽糊精 + 果糖 + 丙氨酸 + 脯氨酸 · 可咀嚼型，冲刺阶段助推</div>
+      <div class="ing" data-en>Maltodextrin + fructose + alanine + proline · chewable, a late-race booster</div>
+      <div class="fl" data-zh>青提 / 7支盒装</div>
+      <div class="fl" data-en>Green Grape / 7 per box</div>
+      <div class="pr"><em data-zh>建议零售</em><em data-en>MSRP</em><b>$11.90</b></div>
+    </div></div>
+
+    <div class="p first"><div class="ph"><img src="img/hypotonic100.jpg" alt="Hypotonic 100"></div><div class="tx">
+      <h4>Hypotonic 100</h4>
+      <div class="ing" data-zh>帕拉金糖 + 氨基酸 + 喜马拉雅粉盐 · 149 mOsm/kg 低渗</div>
+      <div class="ing" data-en>Palatinose + amino acids + Himalayan pink salt · 149 mOsm/kg</div>
+      <div class="fl" data-zh>青苹果 / 7支盒装 · 100kcal</div>
+      <div class="fl" data-en>Green Apple / 7 per box · 100 kcal</div>
+      <div class="pr"><em data-zh>建议零售</em><em data-en>MSRP</em><b>$17.00</b></div>
+    </div></div>
+  </div>
+
+  <div class="gridlbl"><span data-zh>营养补给系列</span><span data-en>Nutrition Line</span><hr></div>
+  <div class="grid gn">
+    <div class="p"><div class="ph"><img src="img/amino5000-stick.jpg" alt="Amino 5000+"></div><div class="tx">
+      <h4>Amino 5000+ <span data-zh>（10g 条装）</span><span data-en>(10g sachet)</span></h4>
+      <div class="ing" data-zh>氨基酸总量 5,000mg · 加水冲饮</div>
+      <div class="ing" data-en>5,000 mg amino acids · mix with water</div>
+      <div class="fl" data-zh>青苹果 · 柠檬 / 10条盒装</div>
+      <div class="fl" data-en>Green Apple · Lemon / 10 per box</div>
+      <div class="pr"><em data-zh>建议零售</em><em data-en>MSRP</em><b>$15.00</b></div>
+    </div></div>
+
+    <div class="p"><div class="ph"><img src="img/energywater.jpg" alt="Energy Water"></div><div class="tx">
+      <h4>Energy Water 600g</h4>
+      <div class="ing" data-zh>维生素C · 牛磺酸 · BCAA · 粉盐</div>
+      <div class="ing" data-en>Vitamin C · taurine · BCAA · pink salt</div>
+      <div class="fl" data-zh>西柚 · 柠檬 · 菠萝 · 青苹果 / 600g 罐装</div>
+      <div class="fl" data-en>Grapefruit · Lemon · Pineapple · Green Apple / 600g tub</div>
+      <div class="pr"><em data-zh>建议零售</em><em data-en>MSRP</em><b>$20.00</b></div>
+    </div></div>
+
+    <div class="p"><div class="ph"><img src="img/arginine6200.jpg" alt="Arginine 6200"></div><div class="tx">
+      <h4>Arginine 6200</h4>
+      <div class="ing" data-zh>精氨酸 6,200mg + 黑玛卡 · 耐力与体能</div>
+      <div class="ing" data-en>Arginine 6,200 mg + black maca · stamina</div>
+      <div class="fl" data-zh>蓝莓 / 14支盒装</div>
+      <div class="fl" data-en>Blueberry / 14 per box</div>
+      <div class="pr"><em data-zh>建议零售</em><em data-en>MSRP</em><b>$21.00</b></div>
+    </div></div>
+
+    <div class="p"><div class="ph"><img src="img/crampturn.jpg" alt="Cramp Turn"></div><div class="tx">
+      <h4>Cramp Turn</h4>
+      <div class="ing" data-zh>有机苹果醋 · 柠檬汁 · 蜂蜜 · 电解质平衡，缓解抽筋</div>
+      <div class="ing" data-en>Organic apple cider vinegar · lemon · honey · for cramping</div>
+      <div class="fl" data-zh>蜂蜜柠檬 / 5支盒装</div>
+      <div class="fl" data-en>Honey &amp; Lemon / 5 per box</div>
+      <div class="pr"><em data-zh>建议零售</em><em data-en>MSRP</em><b>$9.00</b></div>
+    </div></div>
+
+    <div class="p"><div class="ph"><img src="img/caffeine120.jpg" alt="Caffeine Shot 120"></div><div class="tx">
+      <h4>Caffeine Shot 120</h4>
+      <div class="ing" data-zh>咖啡萃取液 · 咖啡因 120mg · 可与其他 OLLLA 产品混合</div>
+      <div class="ing" data-en>Coffee extract · 120 mg caffeine · mixes with other OLLLA products</div>
+      <div class="fl" data-zh>咖啡 / 6支盒装</div>
+      <div class="fl" data-en>Coffee / 6 per box</div>
+      <div class="pr"><em data-zh>建议零售</em><em data-en>MSRP</em><b>$8.50</b></div>
+    </div></div>
+
+    <div class="p"><div class="ph"><img src="img/bcaa9000.jpg" alt="BCAA 9000"></div><div class="tx">
+      <h4>BCAA 9000 <span data-zh>（300g / 600g）</span><span data-en>(300g / 600g)</span></h4>
+      <div class="ing" data-zh>支链氨基酸 2:1:1 · 肌肉恢复与抗疲劳</div>
+      <div class="ing" data-en>Branched-chain amino acids 2:1:1 · recovery and fatigue</div>
+      <div class="fl" data-zh>西柚 · 柠檬 · 菠萝 · 青苹果</div>
+      <div class="fl" data-en>Grapefruit · Lemon · Pineapple · Green Apple</div>
+      <div class="pr"><em data-zh>建议零售</em><em data-en>MSRP</em><b class="ask" data-zh>面议</b><b class="ask" data-en>On request</b></div>
+    </div></div>
+  </div>
+
+  <div class="gridlbl packlbl"><span data-zh>组合装</span><span data-en>Mixed Packs</span><hr></div>
+  <div class="packs">
+    <div class="pack"><b>Starter Pack</b>
+      <span data-zh>3件组合 · 120 水凝胶 / Amino 3000 / 120 Bite</span>
+      <span data-en>3 items · 120 Hydrogel / Amino 3000 / 120 Bite</span></div>
+    <div class="pack"><b>Better Starter Pack</b>
+      <span data-zh>4件组合 · 加入 ION Energy</span>
+      <span data-en>4 items · adds ION Energy</span></div>
+    <div class="pack"><b>Marathon Pack</b>
+      <span data-zh>6件组合 · 213g / 455kcal · 一场马拉松的完整补给</span>
+      <span data-en>6 items · 213g / 455 kcal · a full marathon's fuel</span></div>
+    <div class="pack"><b>Energy Gel Pack</b>
+      <span data-zh>8件组合 · 356g / 768kcal · 长距离耐力用</span>
+      <span data-en>8 items · 356g / 768 kcal · for long efforts</span></div>
+    <div class="pack"><b>120 Hydrogel MIX</b>
+      <span data-zh>12支装 · 四种口味各3支</span>
+      <span data-en>12 pouches · all four flavors, 3 each</span></div>
+  </div>
+
+  <!-- coming soon -->
+  <div class="soon">
+    <span class="badge" data-zh>2026年9月 · 新品类</span><span class="badge" data-en>Sept 2026 · New Category</span>
+    <h3 data-zh>运动糖果系列 · 8款新品</h3>
+    <h3 data-en>OLLLA Candy Series · 8 new SKUs</h3>
+    <p data-zh>从电解质、快速供能，到缓冲、专注力 —— 把运动前中后需要的东西装进一颗糖里。其中两款面向日常补水，把使用场景从运动扩展到每一天。</p>
+    <p data-en>Electrolytes, fast energy, buffering, focus — everything an athlete needs before, during and after, in a single candy. Two of them are daily-hydration products, moving the use case from sport into everyday habit.</p>
+    <div class="chips">
+      <span class="chip w" data-zh>离子平衡糖</span><span class="chip w" data-en>Ion Balance</span>
+      <span class="chip w" data-zh>离子平衡糖 ZERO（泡腾）</span><span class="chip w" data-en>Ion Balance ZERO (effervescent)</span>
+      <span class="chip" data-zh>Salt Elec 电解质</span><span class="chip" data-en>Salt Elec</span>
+      <span class="chip" data-zh>Sports Dextrose 葡萄糖</span><span class="chip" data-en>Sports Dextrose</span>
+      <span class="chip" data-zh>Energy Dextro 高碳水</span><span class="chip" data-en>Energy Dextro</span>
+      <span class="chip" data-zh>Bicarb 碳酸氢盐 2,000mg</span><span class="chip" data-en>Bicarb 2,000 mg</span>
+      <span class="chip" data-zh>Caffeine 咖啡因 20mg</span><span class="chip" data-en>Caffeine 20 mg</span>
+      <span class="chip" data-zh>Nootropic Palatinose</span><span class="chip" data-en>Nootropic Palatinose</span>
+    </div>
+    <div class="mkt">
+      <div><b>8.12%</b><span data-zh>全球运动补剂市场<br>CAGR 2025→2032</span><span data-en>Global sports supplements<br>CAGR 2025→2032</span></div>
+      <div><b>12.7%</b><span data-zh>电解质补剂市场<br>CAGR 2026→2035</span><span data-en>Electrolyte supplements<br>CAGR 2026→2035</span></div>
+      <div><b>35.8%</b><span data-zh>亚太区<br>全球市场占比 2024</span><span data-en>Asia-Pacific<br>share of global market 2024</span></div>
+    </div>
+    <p style="font-size:12px;margin-top:14px" data-zh>在我们的调研范围内，尚未发现把电解质、咖啡因、益智、葡萄糖供能、碳酸氢盐缓冲、日常泡腾这六个类别整合在同一品牌下的竞品。</p>
+    <p style="font-size:12px;margin-top:14px" data-en>Within our research, we found no competitor covering all six categories — electrolytes, caffeine, nootropics, dextrose energy, bicarbonate buffering and daily effervescent — under one brand.</p>
+  </div>
+</section>
+
+<!-- ============ 04 PARTNERSHIP ============ -->
+<section id="s04">
+  <div class="sec-head">
+    <span class="sec-no">04</span>
+    <span class="sec-kicker" data-zh>合作条件</span>
+    <span class="sec-kicker" data-en>Partnership</span>
+  </div>
+  <h2 data-zh>直接生产。<br>条件清楚。</h2>
+  <h2 data-en>Direct manufacturing.<br>Clear terms.</h2>
+  <p class="lede" data-zh>没有最小起订量限制 —— 一次试单就能进入市场测试，这是自有工厂带来的条件。</p>
+  <p class="lede" data-en>No minimum order quantity — you can test the market with a single trial order. That is what owning the factory allows.</p>
+
+  <div class="dealwrap">
+  <dl class="terms">
+    <div class="term"><dt data-zh>交货条件</dt><dt data-en>Delivery</dt>
+      <dd data-zh>FOB 仁川（韩国）</dd><dd data-en>FOB Incheon, South Korea</dd></div>
+    <div class="term"><dt data-zh>付款方式</dt><dt data-en>Payment</dt>
+      <dd data-zh>T/T · 下单支付 50%<small>余款 50% 于发货后支付</small></dd>
+      <dd data-en>T/T · 50% on order<small>Balance 50% after shipment</small></dd></div>
+    <div class="term"><dt data-zh>最小起订量</dt><dt data-en>Minimum order</dt>
+      <dd data-zh>无 MOQ 限制</dd><dd data-en>No MOQ requirement</dd></div>
+    <div class="term"><dt data-zh>交货周期</dt><dt data-en>Lead time</dt>
+      <dd data-zh>2–4 周</dd><dd data-en>2–4 weeks</dd></div>
+    <div class="term"><dt data-zh>保质期</dt><dt data-en>Shelf life</dt>
+      <dd data-zh>24 个月（常温保存）</dd><dd data-en>24 months, ambient storage</dd></div>
+    <div class="term"><dt data-zh>OEM / ODM</dt><dt data-en>OEM / ODM</dt>
+      <dd data-zh>可承接<small>最小数量与条件另议</small></dd>
+      <dd data-en>Available<small>Quantities and terms quoted separately</small></dd></div>
+    <div class="term"><dt data-zh>中文标签</dt><dt data-en>Chinese labelling</dt>
+      <dd data-zh>可按中国市场法规要求定制</dd>
+      <dd data-en>Can be produced to Chinese market requirements</dd></div>
+    <div class="term"><dt data-zh>经销价格</dt><dt data-en>Distributor pricing</dt>
+      <dd data-zh>面议 · 请联系索取报价单</dd>
+      <dd data-en>On request — please ask for the price list</dd></div>
+  </dl>
+
+  <div class="dealside">
+  <div class="support">
+    <div><b>3%</b><span data-zh>订单 $30,000 以上<br>市场推广支持</span><span data-en>Marketing support<br>on orders over $30,000</span></div>
+    <div><b>5%</b><span data-zh>订单 $50,000 以上<br>市场推广支持</span><span data-en>Marketing support<br>on orders over $50,000</span></div>
+  </div>
+
+  <div class="contact">
+    <div class="co" data-zh>中国市场联络</div><div class="co" data-en>China Enquiries</div>
+    <h3>DOTLINK CO., LTD.</h3>
+    <div class="role" data-zh>韩国 · OLLLA 出口合作伙伴 / 中国市场</div>
+    <div class="role" data-en>South Korea · OLLLA export partner for China</div>
+    <div class="cc">
+      <div><b data-zh>负责人</b><b data-en>Contact</b><span>KWON YUN-AN</span></div>
+      <a href="mailto:ceo@dotlink.co.kr"><b>Email</b><span>ceo@dotlink.co.kr</span></a>
+      <div><b>WeChat</b><span data-zh>会面时扫描名片二维码</span><span data-en>Scan card QR when we meet</span></div>
+      <a href="https://ollla.co.kr" target="_blank" rel="noopener"><b data-zh>品牌官网</b><b data-en>Brand site</b><span>ollla.co.kr</span></a>
+    </div>
+    <div class="dl">
+      <a href="OLLLA_2026_CN.pdf" download><span data-zh>下载中文版 PDF（4页）</span><span data-en>Chinese PDF (4 pages)</span></a>
+      <a href="OLLLA_2026_EN.pdf" download><span data-zh>下载英文版 PDF（4页）</span><span data-en>English PDF (4 pages)</span></a>
+    </div>
+  </div>
+  </div>
+  </div>
+</section>
+
+<footer>
+  <b>OLLLA NUTRITION</b>
+  <div data-zh>韩国京畿道杨州市广积面富兴路925街194号 A栋 · HACCP 认证工厂</div>
+  <div data-en>194, Buheung-ro 925beon-gil, Gwangjeok-myeon, Yangju-si, Gyeonggi-do, South Korea · HACCP-certified</div>
+  <div class="note" data-zh>※ 体感与消化反应因运动强度、摄入量、补水情况及个人状态而异。渗透压与成分依产品批次及各国配方可能不同，准确分类以产品实测值为准。市场数据引自公开行业报告。价格为建议零售价，实际售价由渠道决定。<br>依据参考：Rowlands et al., Sports Medicine (2022); Leiper, Int J Sports Med (1998).</div>
+  <div class="note" data-en>※ Perceived effect and digestive response vary with exercise intensity, intake volume, hydration and individual condition. Osmolality and composition may differ by batch and by market formulation; classification should follow measured product values. Market figures are from published industry reports. Prices shown are suggested retail; actual retail price is set by the channel.<br>References: Rowlands et al., Sports Medicine (2022); Leiper, Int J Sports Med (1998).</div>
+</footer>
+
+</div>
+
+<script>
+function setLang(l){
+  document.body.className='lang-'+l;
+  document.documentElement.lang = (l==='zh'?'zh-CN':'en');
+  document.getElementById('bzh').className = (l==='zh'?'on':'');
+  document.getElementById('ben').className = (l==='en'?'on':'');
+  try{localStorage.setItem('ollla_lang',l)}catch(e){}
+}
+(function(){
+  var l=null;
+  try{ l=new URLSearchParams(location.search).get('lang') }catch(e){}
+  if(!l){ try{ l=localStorage.getItem('ollla_lang') }catch(e){} }
+  if(!l){ l=(navigator.language||'').toLowerCase().indexOf('zh')===0?'zh':'en' }
+  if(l!=='zh'&&l!=='en') l='zh';
+  setLang(l);
+  try{ if(new URLSearchParams(location.search).get('pdf')==='1') document.body.classList.add('pdfmode') }catch(e){}
+})();
+</script>
+</body>
+</html>
