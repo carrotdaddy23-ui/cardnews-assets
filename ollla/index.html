@@ -76,6 +76,26 @@ p{color:var(--mut)}
 .rule h4{font-size:14.5px;font-weight:700;margin-bottom:2px}
 .rule p{font-size:13px;line-height:1.55}
 
+
+/* ---------- sponsored athletes ---------- */
+.ath{margin-top:4px}
+.athg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.a{background:var(--card);border:1px solid var(--line);border-radius:11px;overflow:hidden;break-inside:avoid}
+.a .aph{aspect-ratio:3/4;background:#1b1b21;overflow:hidden}
+.a .aph img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.a .an{padding:8px 8px 10px}
+.a .an b{display:block;font-size:11.5px;font-weight:750;line-height:1.25;letter-spacing:.01em}
+.a .an span{display:block;font-size:10.5px;color:var(--dim);margin-top:3px;line-height:1.35}
+.athnote{font-size:12px;color:var(--mut);margin-top:13px;line-height:1.6}
+@media (min-width:560px){.athg{grid-template-columns:repeat(4,1fr)}}
+body.pdfmode .ath{margin-top:12px}
+body.pdfmode .athg{grid-template-columns:repeat(8,1fr);gap:6px;margin-top:9px}
+body.pdfmode .a .aph{aspect-ratio:1/1}
+body.pdfmode .a .an{padding:6px}
+body.pdfmode .a .an b{font-size:9.6px}
+body.pdfmode .a .an span{font-size:8.8px}
+body.pdfmode .athnote{font-size:10.4px;margin-top:9px}
+
 /* ---------- tech ---------- */
 .tech{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 18px;margin-top:22px}
 .badge{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
@@ -361,6 +381,31 @@ body.pdfmode .note{font-size:8.6px;margin-top:10px;padding-top:9px}
     </div></div>
   </div>
 </section>
+</div>
+
+<!-- ============ ATHLETES ============ -->
+<div class="ath">
+  <div class="gridlbl"><span data-zh>签约运动员 · 34人</span><span data-en>Sponsored Athletes · 34</span><hr></div>
+  <div class="athg">
+    <div class="a"><div class="aph"><img src="img/ath-kim-kukyoung.jpg" alt="KIM KUK-YOUNG" loading="lazy"></div>
+      <div class="an"><b>KIM KUK-YOUNG</b><span data-zh>大韩田径联盟 · 国家队教练 · 奖牌得主</span><span data-en>Korea Athletics Federation · national team coach · medalist</span></div></div>
+    <div class="a"><div class="aph"><img src="img/ath-lee-jaeseong.jpg" alt="LEE JAE-SEONG" loading="lazy"></div>
+      <div class="an"><b>LEE JAE-SEONG</b><span data-zh>田径 · 国家队 · 奖牌得主</span><span data-en>Track &amp; field · national team · medalist</span></div></div>
+    <div class="a"><div class="aph"><img src="img/ath-ko-seunghwan.jpg" alt="KO SEUNG-HWAN" loading="lazy"></div>
+      <div class="an"><b>KO SEUNG-HWAN</b><span data-zh>田径 · 国家队 · 奖牌得主</span><span data-en>Track &amp; field · national team · medalist</span></div></div>
+    <div class="a"><div class="aph"><img src="img/ath-kim-minsu.jpg" alt="KIM MIN-SU" loading="lazy"></div>
+      <div class="an"><b>KIM MIN-SU</b><span data-zh>柔道 · 奖牌得主</span><span data-en>Judo · medalist</span></div></div>
+    <div class="a"><div class="aph"><img src="img/ath-nam-kitae.jpg" alt="NAM KI-TAE" loading="lazy"></div>
+      <div class="an"><b>NAM KI-TAE</b><span data-zh>HYROX 韩国第一 · 选手兼教练</span><span data-en>HYROX Korea No.1 · athlete &amp; coach</span></div></div>
+    <div class="a"><div class="aph"><img src="img/ath-chun-seongho.jpg" alt="CHUN SEONG-HO" loading="lazy"></div>
+      <div class="an"><b>CHUN SEONG-HO</b><span data-zh>LG 双子队 · 内野手</span><span data-en>LG Twins · infielder</span></div></div>
+    <div class="a"><div class="aph"><img src="img/ath-kim-jinsu.jpg" alt="KIM JIN-SU" loading="lazy"></div>
+      <div class="an"><b>KIM JIN-SU</b><span data-zh>LG 双子队 · 投手</span><span data-en>LG Twins · pitcher</span></div></div>
+    <div class="a"><div class="aph"><img src="img/ath-choi-wonyoung.jpg" alt="CHOI WON-YOUNG" loading="lazy"></div>
+      <div class="an"><b>CHOI WON-YOUNG</b><span data-zh>LG 双子队 · 外野手</span><span data-en>LG Twins · outfielder</span></div></div>
+  </div>
+  <p class="athnote" data-zh>此外还支持越野国家队选手、铁人三项、跑步、超级马拉松、骑行、游泳、羽毛球、拳击等项目选手，以及青少年 BMX 车手 —— 共 34 人。产品先在赛场上被使用，再进入市场。</p>
+  <p class="athnote" data-en>Also supporting a cross-country national team athlete, plus triathlon, running, ultra-running, cycling, swimming, badminton and boxing athletes and youth BMX riders — 34 in total. The products are used in competition before they reach the market.</p>
 </div>
 
 <!-- ============ 02 TECHNOLOGY ============ -->
@@ -663,7 +708,7 @@ body.pdfmode .note{font-size:8.6px;margin-top:10px;padding-top:9px}
     <div class="role" data-zh>韩国 · OLLLA 出口合作伙伴 / 中国市场</div>
     <div class="role" data-en>South Korea · OLLLA export partner for China</div>
     <div class="cc">
-      <div><b data-zh>负责人</b><b data-en>Contact</b><span>KWON YUN-AN</span></div>
+      <div><b data-zh>负责人</b><b data-en>Contact</b><span data-zh>权润颜 · KWON YOONAN</span><span data-en>KWON YOONAN</span></div>
       <a href="mailto:ceo@dotlink.co.kr"><b>Email</b><span>ceo@dotlink.co.kr</span></a>
       <div><b>WeChat</b><span data-zh>会面时扫描名片二维码</span><span data-en>Scan card QR when we meet</span></div>
       <a href="https://ollla.co.kr" target="_blank" rel="noopener"><b data-zh>品牌官网</b><b data-en>Brand site</b><span>ollla.co.kr</span></a>
