@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>삼신할매 날짜 달력</title>
+<meta name="description" content="임신 준비부터 아기 돌까지, 놓치면 다시 못 받는 날짜를 한 장에 모았어요.">
+<style>
+:root{--bg:#fbf7f0;--card:#fff;--ink:#2b2622;--muted:#7a6f66;--line:#ece4d8;--accent:#b5452f;--sage:#6f8f72;--chip:#f3ece1}
+@media (prefers-color-scheme:dark){:root{--bg:#1d1a17;--card:#26221e;--ink:#f3ede4;--muted:#b3a89c;--line:#3a332c;--accent:#e57a63;--sage:#9fbe9f;--chip:#302a24}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.6}
+main{max-width:640px;margin:0 auto;padding:28px 16px 48px}
+header h1{font-size:1.6rem;margin:0 0 6px}
+header p{margin:0;color:var(--muted)}
+.stage{margin-top:28px}
+.stage h2{font-size:1.05rem;margin:0 0 10px;color:var(--sage);letter-spacing:-.01em}
+.item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:10px;display:flex;gap:12px}
+.item input{width:20px;height:20px;margin-top:3px;accent-color:var(--accent);flex:none}
+.when{display:inline-block;background:var(--chip);color:var(--accent);font-weight:700;font-size:.85rem;border-radius:999px;padding:1px 10px;margin-bottom:4px}
+.item b{display:block}
+.item small{color:var(--muted);display:block}
+.item a{color:var(--muted)}
+.signal{border-left:4px solid var(--accent)}
+footer{margin-top:32px;font-size:.85rem;color:var(--muted)}
+footer a{color:var(--accent)}
+.cta{margin-top:24px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+</style>
+</head>
+<body>
+<main>
+<header>
+<h1>📅 삼신할매 날짜 달력</h1>
+<p>임신 준비부터 아기 돌까지, 놓치면 다시 못 받는 날짜만 모았어요. 해낸 건 체크해 두세요.</p>
+</header>
+
+<section class="stage"><h2>임신 준비</h2>
+<label class="item"><input type="checkbox"><div><span class="when">임신 3개월 전부터</span><b>엽산 400μg 챙기기</b><small>아기 뇌·척추가 될 신경관은 대부분 임신을 알기 전에 닫혀요. 임신 12주까지 계속. 용량은 담당 선생님과 상의하세요.</small></div></label>
+<label class="item"><input type="checkbox"><div><span class="when">임신 전에만</span><b>풍진 항체 피검사</b><small>항체가 없으면 MMR 접종 후 4주는 임신을 미뤄요(생백신). 임신 중엔 못 맞아요. <a href="https://nip.kdca.go.kr">예방접종도우미</a></small></div></label>
+</section>
+
+<section class="stage"><h2>임신 중</h2>
+<label class="item"><input type="checkbox"><div><span class="when">2026.9.21 ~ 2027.4.30</span><b>임신부 독감 무료 접종</b><small>임신 주수와 상관없어요. 위탁의료기관·보건소.</small></div></label>
+<label class="item"><input type="checkbox"><div><span class="when">임신 27~36주</span><b>백일해(Tdap) 접종</b><small>엄마 항체가 아기에게 건너가 첫 예방주사(생후 2개월) 전 두 달을 막아줘요. 임신할 때마다 다시.</small></div></label>
+<label class="item"><input type="checkbox"><div><span class="when">출산 전</span><b>카시트 미리 설치</b><small>6세 미만은 퇴원하는 날 첫 차부터 카시트예요. 13세 미만 미착용 시 운전자 과태료 6만 원.</small></div></label>
+</section>
+
+<section class="stage"><h2>출산 후 한 달</h2>
+<label class="item"><input type="checkbox"><div><span class="when">출생 후 1개월 안</span><b>출생신고</b><small>늦으면 과태료(7일 미만 1만 원 → 최대 5만 원). 주민센터 또는 온라인.</small></div></label>
+<label class="item"><input type="checkbox"><div><span class="when">출생일 포함 60일 안</span><b>아동수당 신청</b><small>60일 안이면 태어난 달부터, 지나면 신청한 달부터만. 만 9세 미만, 지역에 따라 월 10만~13만 원.</small></div></label>
+<label class="item"><input type="checkbox"><div><span class="when">출생일 포함 60일 안</span><b>부모급여 신청</b><small>60일 안이면 태어난 달부터 소급. 0세 월 100만 원, 1세 월 50만 원(2026). 출생신고 날 같이 내면 끝.</small></div></label>
+<label class="item"><input type="checkbox"><div><span class="when">생후 14~35일</span><b>영유아 건강검진 1차</b><small>본인 부담 없음. 출생신고 전이면 공단(1577-1000)에 먼저 등록.</small></div></label>
+</section>
+
+<section class="stage"><h2>돌까지</h2>
+<label class="item"><input type="checkbox"><div><span class="when">생후 2개월</span><b>첫 예방주사(DTaP 등)</b><small>국가예방접종 일정은 <a href="https://nip.kdca.go.kr">예방접종도우미</a>에서 아이별로 확인.</small></div></label>
+<label class="item"><input type="checkbox"><div><span class="when">출생일부터 2년</span><b>첫만남이용권 다 쓰기</b><small>첫째 200만 원·둘째부터 300만 원. 기한 지나면 잔액은 자동 소멸, 연장·환급 없음.</small></div></label>
+<label class="item"><input type="checkbox"><div><span class="when">휴직 끝나고 12개월 안</span><b>육아휴직 급여 신청</b><small>기한이 지나면 청구할 수 없어요(고용보험법 제70조).</small></div></label>
+</section>
+
+<section class="stage"><h2>기다리지 말고 바로 병원</h2>
+<div class="item signal"><div><b>생후 3개월 전 38도 이상</b><small>밤이어도 바로 진료(대한소아청소년과학회).</small></div></div>
+<div class="item signal"><div><b>분수처럼 뿜는 구토 · 초록빛·피 섞인 구토 · 12시간 소변 없음</b><small>정상 게움은 소량이고 아이가 편안해요.</small></div></div>
+<div class="item signal"><div><b>물도 못 넘기는 입덧 · 소변 감소 · 체중 5% 넘게 감소</b><small>다음 진료까지 기다리지 말고 다니는 산부인과에.</small></div></div>
+<div class="item"><div><b>안전하게 재우기</b><small>낮잠까지 똑바로 눕히고, 침대 안엔 베개·이불·인형·범퍼 없이.</small></div></div>
+</section>
+
+<div class="cta">새 날짜가 생기면 여기에 더해 둘게요.<br>인스타 · 유튜브 · 스레드 <b>@3god_grandma</b></div>
+
+<footer>
+엄마, 오늘도 충분히 잘하고 있어요. 삼신할매가 응원할게요 🌸<br><br>
+※ 일반적인 정보예요. 금액·기한은 해마다, 지역마다 달라질 수 있으니 신청 전 최신 공고를 확인하세요. 건강 관련 내용은 꼭 담당 선생님과 상의하세요.<br>
+최종 확인 2026-10-01 · 출처: 질병관리청, 복지로, 정부24, 찾기쉬운 생활법령정보, 국민행복카드, 대한소아청소년과학회, 서울아산병원
+</footer>
+</main>
+</body>
+</html>
