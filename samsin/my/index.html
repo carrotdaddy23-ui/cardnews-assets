@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>내 날짜 달력</title>
+<meta name="description" content="출산예정일이나 아기 생일만 넣으면, 놓치면 다시 못 받는 날짜를 내 날짜로 계산해 드려요.">
+<style>
+:root{--bg:#fbf7f0;--card:#fff;--ink:#2b2622;--muted:#7a6f66;--line:#ece4d8;--accent:#b5452f;--sage:#6f8f72;--chip:#f3ece1;--btn:#fee500;--btnink:#191600}
+@media (prefers-color-scheme:dark){:root{--bg:#1d1a17;--card:#26221e;--ink:#f3ede4;--muted:#b3a89c;--line:#3a332c;--accent:#e57a63;--sage:#9fbe9f;--chip:#302a24}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.6}
+main{max-width:640px;margin:0 auto;padding:28px 16px 48px}
+h1{font-size:1.6rem;margin:0 0 6px}
+p.lead{margin:0;color:var(--muted)}
+.form{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:20px}
+.form label{display:block;font-weight:700;margin-bottom:6px}
+.seg{display:flex;gap:8px;margin-bottom:12px}
+.seg button{flex:1;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--chip);color:var(--ink);font:inherit;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--accent);color:#fff;border-color:var(--accent)}
+input[type=date]{width:100%;padding:10px;font:inherit;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.stage{margin-top:24px}
+.stage h2{font-size:1.05rem;margin:0 0 10px;color:var(--sage)}
+.item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin-bottom:10px}
+.item.past{opacity:.55}
+.item.soon{border-left:4px solid var(--accent)}
+.when{display:inline-block;background:var(--chip);color:var(--accent);font-weight:700;font-size:.85rem;border-radius:999px;padding:1px 10px;margin-bottom:4px}
+.dday{float:right;font-size:.85rem;color:var(--muted)}
+.item b{display:block}
+.item small{color:var(--muted);display:block}
+.cta{margin-top:28px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+.cta b{display:block;font-size:1.05rem;margin-bottom:4px}
+.cta a.btn{display:inline-block;margin-top:12px;background:var(--btn);color:var(--btnink);font-weight:700;text-decoration:none;padding:12px 20px;border-radius:12px}
+.cta small{display:block;color:var(--muted);margin-top:8px}
+footer{margin-top:28px;font-size:.85rem;color:var(--muted)}
+footer a{color:var(--accent)}
+#out:empty{display:none}
+</style>
+</head>
+<body>
+<main>
+<h1>🗓️ 내 날짜 달력</h1>
+<p class="lead">날짜 하나만 넣으면, 놓치면 다시 못 받는 날짜를 <b>내 날짜</b>로 계산해 드려요. 입력한 날짜는 어디에도 저장되지 않아요.</p>
+
+<div class="form">
+  <div class="seg" role="group" aria-label="지금 상황">
+    <button type="button" id="mPreg" aria-pressed="true">아기 기다리는 중</button>
+    <button type="button" id="mBorn" aria-pressed="false">아기 태어났어요</button>
+  </div>
+  <label for="d" id="dl">출산예정일</label>
+  <input type="date" id="d">
+</div>
+
+<div id="out"></div>
+
+<div class="cta" id="cta">
+  <b>매달 1일, 우리 아기 개월 수에 맞는 할 일</b>
+  <span>다음 달 달력은 삼신할매 예비맘 방에 먼저 올려요.</span><br>
+  <a class="btn" id="roomBtn" href="#" target="_blank" rel="noopener">예비맘 날짜방 들어가기</a>
+  <small id="roomNote">닉네임은 "출산예정월/첫째·둘째/지역"으로 해 주세요. 예) 27년3월/첫째/수원</small>
+</div>
+
+<footer>
+<p>인스타 · 유튜브 · 스레드 <a href="https://www.instagram.com/3god_grandma/">@3god_grandma</a> · <a href="../calendar/">전체 날짜 달력 보기</a></p>
+<p>엄마, 오늘도 충분히 잘하고 있어요. 삼신할매가 응원할게요 🌸</p>
+<p>※ 일반적인 정보예요. 출산예정일 기준 날짜는 실제 출생일에 따라 달라지니, 태어나면 생일로 다시 계산해 주세요. 금액·기한은 해마다, 지역마다 달라질 수 있으니 신청 전 최신 공고를 확인하세요. 건강 관련 내용은 꼭 담당 선생님과 상의하세요.<br>최종 확인 2026-10-01 · 출처: 질병관리청, 복지로, 정부24, 찾기쉬운 생활법령정보, 국민행복카드</p>
+</footer>
+</main>
+<script>
+// 오픈채팅 개설 뒤 주소만 넣는다. 비어 있으면 인스타 팔로우로 대체.
+var ROOM_URL = "";
+var FLU_END = new Date(2027, 3, 30);
+
+(function(){
+  var btn = document.getElementById("roomBtn"), note = document.getElementById("roomNote");
+  if (ROOM_URL) { btn.href = ROOM_URL; }
+  else {
+    btn.href = "https://www.instagram.com/3god_grandma/";
+    btn.textContent = "삼신할매 팔로우하고 먼저 받기";
+    note.textContent = "예비맘 날짜방은 곧 열려요. 팔로우해 두시면 열리는 날 바로 알려 드려요.";
+  }
+})();
+
+var mode = "preg";
+function add(d, n){ var x = new Date(d); x.setDate(x.getDate() + n); return x; }
+function addM(d, n){ var x = new Date(d); x.setMonth(x.getMonth() + n); return x; }
+function fmt(d){ return d.getFullYear() + "." + (d.getMonth()+1) + "." + d.getDate(); }
+function today(){ var t = new Date(); t.setHours(0,0,0,0); return t; }
+function dday(end){
+  var n = Math.round((end - today()) / 864e5);
+  return n > 0 ? "D-" + n : (n === 0 ? "오늘까지" : "지났어요");
+}
+
+function rows(base){
+  var r = [], birth = base;
+  if (mode === "preg") {
+    var lmp = add(base, -280);
+    r.push({g:"임신 중", s:add(lmp, 27*7), e:add(lmp, 36*7+6), t:"백일해(Tdap) 접종", m:"임신 27~36주. 엄마 항체가 첫 예방주사 전 두 달을 막아줘요."});
+    if (today() <= FLU_END) r.push({g:"임신 중", s:today(), e:FLU_END, t:"임신부 독감 무료 접종", m:"2027.4.30까지, 주수와 상관없어요. 위탁의료기관·보건소."});
+    r.push({g:"임신 중", s:null, e:add(base, -14), t:"카시트 미리 설치", m:"퇴원하는 날 첫 차부터 카시트예요. 예정일 2주 전까지 설치해 두면 마음이 편해요."});
+  }
+  var g = mode === "preg" ? "출산 후 (예정일 기준)" : "출산 후";
+  r.push({g:g, s:add(birth, 14), e:add(birth, 35), t:"영유아 건강검진 1차", m:"생후 14~35일, 본인 부담 없음. 출생신고 전이면 공단(1577-1000)에 먼저 등록."});
+  r.push({g:g, s:null, e:add(addM(birth, 1), -1), t:"출생신고", m:"출생 후 1개월 안. 늦으면 과태료(최대 5만 원)."});
+  r.push({g:g, s:null, e:add(birth, 59), t:"부모급여 + 아동수당 신청", m:"출생일 포함 60일 안이면 태어난 달부터 받아요. 출생신고 날 같이 내면 끝."});
+  r.push({g:"돌까지", s:addM(birth, 2), e:null, t:"첫 예방주사(DTaP 등)", m:"생후 2개월. 아이별 일정은 예방접종도우미에서 확인."});
+  r.push({g:"돌까지", s:null, e:add(addM(birth, 24), -1), t:"첫만남이용권 다 쓰기", m:"첫째 200만 원·둘째부터 300만 원. 기한 지나면 잔액 자동 소멸."});
+  return r;
+}
+
+function render(){
+  var v = document.getElementById("d").value, out = document.getElementById("out");
+  if (!v) { out.innerHTML = ""; return; }
+  var p = v.split("-"), base = new Date(+p[0], +p[1]-1, +p[2]);
+  var t = today(), html = "", cur = "";
+  rows(base).forEach(function(x){
+    if (x.g !== cur) { if (cur) html += "</section>"; html += '<section class="stage"><h2>' + x.g + "</h2>"; cur = x.g; }
+    var end = x.e || x.s, past = x.e ? x.e < t : false;
+    var soon = !past && end && (end - t) / 864e5 <= 30;
+    var when = x.s && x.e ? fmt(x.s) + " ~ " + fmt(x.e) : (x.e ? fmt(x.e) + "까지" : fmt(x.s) + "부터");
+    html += '<div class="item' + (past ? " past" : "") + (soon ? " soon" : "") + '"><span class="when">' + when + '</span>'
+         + (x.e ? '<span class="dday">' + dday(x.e) + "</span>" : "")
+         + "<b>" + x.t + "</b><small>" + x.m + "</small></div>";
+  });
+  out.innerHTML = html + "</section>";
+}
+
+function setMode(m){
+  mode = m;
+  document.getElementById("mPreg").setAttribute("aria-pressed", m === "preg");
+  document.getElementById("mBorn").setAttribute("aria-pressed", m === "born");
+  document.getElementById("dl").textContent = m === "preg" ? "출산예정일" : "아기 생일";
+  render();
+}
+document.getElementById("mPreg").onclick = function(){ setMode("preg"); };
+document.getElementById("mBorn").onclick = function(){ setMode("born"); };
+document.getElementById("d").oninput = render;
+</script>
+</body>
+</html>
