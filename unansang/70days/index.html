@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>지운 사업 11개와 이유 — 유난상 70일 장부</title>
+<meta name="description" content="2026년 남은 70일, 사업 12개 중 11개를 지운 기준 네 칸(남는가·도는가·쌓이는가·상대가 있는가)과 사업별 판정표. 사장님 사업도 같은 표에 넣어 볼 수 있습니다." />
+<meta property="og:title" content="지운 사업 11개와 이유 — 유난상" />
+<meta property="og:description" content="상인이 사업 고르는 숫자 네 개. 12개를 줄 세웠더니 하나 남았어요. 사장님 것도 넣어 보세요." />
+<meta property="og:type" content="website" />
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#fff7e8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" />
+<style>
+  :root{
+    --cream:#fff7e8; --paper:#fffdf8; --white:#fff; --line:#ecdfc8;
+    --ink:#2b2418; --ink-soft:#5a4d3a; --sub:#8a7a62;
+    --orange:#f0852d; --orange-50:#fdebd9;
+    --green:#2f9e63; --amber:#d6a11f; --red:#d9573f;
+    --keep:#fff1dc;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{font-family:'Noto Sans KR',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:560px;margin:0 auto;padding:0 16px}
+  header{padding:30px 0 22px}
+  .eyebrow{margin:0 0 8px;font-size:13px;font-weight:700;color:var(--orange);letter-spacing:.02em}
+  h1{margin:0 0 10px;font-size:27px;line-height:1.3;font-weight:900;letter-spacing:-.02em}
+  header p{margin:0;color:var(--ink-soft);font-size:15px}
+  main{padding:0 0 48px}
+  .box{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:18px 18px;margin:0 0 18px}
+  h2{margin:0 0 10px;font-size:18px;font-weight:900;letter-spacing:-.01em}
+  .box p{margin:0 0 8px;font-size:14.5px;color:var(--ink-soft)}
+  .box p:last-child{margin-bottom:0}
+  .four{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0 4px}
+  .four div{background:var(--cream);border-radius:12px;padding:12px 12px}
+  .four b{display:block;font-size:15.5px;margin-bottom:2px}
+  .four span{font-size:13px;color:var(--sub)}
+
+  .tbl{width:100%;border-collapse:collapse;background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:13.5px}
+  .tbl th,.tbl td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+  .tbl th{background:#f6ecd9;font-weight:700;font-size:12px;color:var(--ink-soft);white-space:nowrap}
+  .tbl th.c,.tbl td.c{text-align:center;width:34px;padding-left:4px;padding-right:4px}
+  .tbl tr:last-child td{border-bottom:0}
+  .tbl td .n{font-weight:700;font-size:14px;display:block}
+  .tbl td .w{display:block;font-size:12.5px;color:var(--sub);margin-top:2px}
+  .tbl td .s{display:inline-block;margin-top:5px;font-size:11.5px;font-weight:700;padding:2px 7px;border-radius:999px;background:var(--cream);color:var(--ink-soft)}
+  .ok{color:var(--green);font-weight:900}
+  .so{color:var(--amber);font-weight:900}
+  .no{color:var(--red);font-weight:900}
+  tr.keep td{background:var(--keep)}
+  tr.keep .s{background:var(--orange);color:#fff}
+  .legend{margin:8px 0 0;font-size:12.5px;color:var(--sub)}
+
+  .me label{display:block;font-size:13.5px;font-weight:700;margin:10px 0 4px}
+  .me input[type=text]{width:100%;font:inherit;font-size:15px;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--paper)}
+  .seg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+  .seg button{font:inherit;font-size:14px;font-weight:700;padding:10px 0;border:1.5px solid var(--line);border-radius:10px;background:var(--white);color:var(--ink-soft);cursor:pointer}
+  .seg button.on{border-color:var(--orange);background:var(--orange-50);color:var(--ink)}
+  .verdict{margin-top:14px;background:var(--cream);border-radius:12px;padding:14px;font-size:14.5px;display:none}
+  .verdict b{display:block;font-size:17px;margin-bottom:4px}
+
+  .cta{background:var(--white);border:2px solid var(--orange);border-radius:16px;padding:18px;margin:0 0 18px}
+  .cta p{margin:0 0 8px;font-size:14.5px;color:var(--ink-soft)}
+  .btn{display:block;width:100%;text-align:center;text-decoration:none;font:inherit;font-weight:900;font-size:16px;padding:14px;border-radius:12px;background:var(--orange);color:#fff;margin-top:10px}
+  .fine{font-size:12.5px;color:var(--sub);margin:14px 0 0}
+  footer{padding:0 0 40px;font-size:12px;color:var(--sub)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <p class="eyebrow">유난상 · 70일 장부 · 자료 1</p>
+  <h1>사업 12개 중 11개를 지운 기준과 표</h1>
+  <p>2026년이 70일 남은 10월 22일에 셌어요. 지운 건 버린 게 아니라 70일 동안 손 안 대는 거예요. 아래 표 그대로 사장님 사업도 넣어 보세요.</p>
+</header>
+
+<main>
+  <section class="box">
+    <h2>상인이 사업 고를 때 보는 숫자 네 개</h2>
+    <p>물건 고를 때 보던 세 개에, 9년치 북마크 분석에서 나온 하나를 더했어요. 혼자 하는 일은 전부 중간에 멈췄고, 상대가 있는 일만 끝났거든요.</p>
+    <div class="four">
+      <div><b>① 남는가</b><span>마진. 원가와 판매가를 숫자로 아는가</span></div>
+      <div><b>② 도는가</b><span>회전. 돈이 들어오는 주기가 한 달 안인가</span></div>
+      <div><b>③ 쌓이는가</b><span>재고. 돈이 창고에 먼저 묶이는가</span></div>
+      <div><b>④ 상대가 있는가</b><span>고객·파트너·발행 약속. 내가 안 하면 티가 나는가</span></div>
+    </div>
+  </section>
+
+  <h2 style="margin:6px 0 8px">12개 판정표 (2026-10-22, 유난상 기준)</h2>
+  <table class="tbl">
+    <thead><tr><th>사업</th><th class="c">남</th><th class="c">돈</th><th class="c">재고</th><th class="c">상대</th></tr></thead>
+    <tbody>
+      <tr class="keep"><td><span class="n">유플릿 (가게 인터넷·전화 개통)</span><span class="w">리드 원가가 실측돼요(최근 CPL 7,434원). 재고 없음, 업종 안 가림, 베가네트웍스 팀과 매일 상담 전화. 네 칸 다 통과.</span><span class="s">남김 · 70일 집중</span></td><td class="c ok">○</td><td class="c ok">○</td><td class="c ok">○</td><td class="c ok">○</td></tr>
+      <tr><td><span class="n">전자책 (중국 소싱 매뉴얼)</span><span class="w">원가 0, 14권 팔렸어요. 근데 6주에 14권이면 회전이 느려요. 자동으로 팔리게 두고 손은 뗐어요.</span><span class="s">자동 유지</span></td><td class="c ok">○</td><td class="c so">△</td><td class="c ok">○</td><td class="c so">△</td></tr>
+      <tr><td><span class="n">쿠팡파트너스</span><span class="w">수수료 3%대. 글 한 편당 남는 돈이 커피값이 안 돼요. 돌아가는 글은 그대로 두고 새로 안 써요.</span><span class="s">자동 유지</span></td><td class="c no">×</td><td class="c ok">○</td><td class="c ok">○</td><td class="c no">×</td></tr>
+      <tr><td><span class="n">애드센스 사이트 3개</span><span class="w">심사·배포가 밀린 채 몇 달. 아무도 기다리지 않는 일이라 계속 뒤로 밀렸어요. 혼자 하는 일의 전형.</span><span class="s">자동 유지</span></td><td class="c no">×</td><td class="c no">×</td><td class="c ok">○</td><td class="c no">×</td></tr>
+      <tr><td><span class="n">한국 식품 수출 (코리아푸드링크)</span><span class="w">건당 마진은 크지만 바이어 대화가 전부 카탈로그 단계에서 멈춰 있어요. 병목은 리드가 아니라 자료. 영어 채널(범이)만 돌리고 거래는 보류.</span><span class="s">채널만 유지</span></td><td class="c so">△</td><td class="c no">×</td><td class="c ok">○</td><td class="c ok">○</td></tr>
+      <tr><td><span class="n">대만 견과 라유 수입</span><span class="w">수입은 돈이 컨테이너에 먼저 타요. 7년 동안 제 돈이 늘 창고에 있던 이유가 이거예요. 공방 소싱 검증까지만.</span><span class="s">보류</span></td><td class="c so">△</td><td class="c so">△</td><td class="c no">×</td><td class="c ok">○</td></tr>
+      <tr><td><span class="n">중국 스포츠 뉴트리션 총판</span><span class="w">총판은 재고를 안고 가는 일이고, 매출은 전시회 단위로 띄엄띄엄 와요. 총판권은 두고 움직이지 않아요.</span><span class="s">보류</span></td><td class="c so">△</td><td class="c no">×</td><td class="c no">×</td><td class="c ok">○</td></tr>
+      <tr><td><span class="n">유난상회 큐레이션 상점</span><span class="w">소형 가젯 실측 마진이 개당 762원, 6.3%였어요. 재고 사 와야 하고 아직 사 줄 소비자도 없어요.</span><span class="s">보류</span></td><td class="c no">×</td><td class="c so">△</td><td class="c no">×</td><td class="c no">×</td></tr>
+      <tr><td><span class="n">텐핑 제휴 광고</span><span class="w">광고비 넣으면 바로 도는데, 승인율은 플랫폼이 정하고 저를 기다리는 사람은 없어요.</span><span class="s">보류</span></td><td class="c so">△</td><td class="c ok">○</td><td class="c ok">○</td><td class="c no">×</td></tr>
+      <tr><td><span class="n">SNS 원화 경매</span><span class="w">재고는 없는데 같이 할 작가가 아직 한 명도 없어요. 상대가 생기면 다시 꺼내요.</span><span class="s">보류</span></td><td class="c so">△</td><td class="c so">△</td><td class="c ok">○</td><td class="c no">×</td></tr>
+      <tr><td><span class="n">K뷰티 글로벌 마케팅 대행</span><span class="w">용역이라 남는 건 좋은데, 미팅 한 번에 계약은 0. 상대가 아직 말뿐이에요.</span><span class="s">보류</span></td><td class="c ok">○</td><td class="c so">△</td><td class="c ok">○</td><td class="c so">△</td></tr>
+      <tr><td><span class="n">강의 VOD·라이브클래스</span><span class="w">팔 상품도 수강생도 아직 없어요. 70일 유플릿 기록이 끝나면 그게 강의가 돼요. 순서가 뒤예요.</span><span class="s">보류 · 순서 뒤</span></td><td class="c ok">○</td><td class="c so">△</td><td class="c ok">○</td><td class="c no">×</td></tr>
+    </tbody>
+  </table>
+  <p class="legend">○ 통과 · △ 애매 · × 탈락. "자동 유지"는 이미 도는 걸 멈추지 않는다는 뜻이고, "보류"는 70일 동안 손 안 댄다는 뜻이에요. 숫자는 전부 제 장부 실측이고, 판정은 제 기준이에요.</p>
+
+  <section class="box me" style="margin-top:18px">
+    <h2>사장님 사업도 넣어 보세요</h2>
+    <p>네 칸을 누르면 어디서 떨어지는지 바로 나와요. 어디에도 저장되지 않아요.</p>
+    <label for="biz">사업 이름</label>
+    <input type="text" id="biz" placeholder="예: 동네 카페 2호점" />
+    <label>① 남는가 (원가·판매가를 숫자로 아는가)</label>
+    <div class="seg" data-k="0"><button type="button" data-v="2">○ 안다</button><button type="button" data-v="1">△ 대충</button><button type="button" data-v="0">× 모른다</button></div>
+    <label>② 도는가 (돈이 한 달 안에 들어오는가)</label>
+    <div class="seg" data-k="1"><button type="button" data-v="2">○ 한 달 안</button><button type="button" data-v="1">△ 분기</button><button type="button" data-v="0">× 더 길다</button></div>
+    <label>③ 쌓이는가 (돈이 재고에 먼저 묶이는가)</label>
+    <div class="seg" data-k="2"><button type="button" data-v="2">○ 안 묶인다</button><button type="button" data-v="1">△ 조금</button><button type="button" data-v="0">× 먼저 묶인다</button></div>
+    <label>④ 상대가 있는가 (내가 안 하면 티가 나는가)</label>
+    <div class="seg" data-k="3"><button type="button" data-v="2">○ 있다</button><button type="button" data-v="1">△ 말뿐</button><button type="button" data-v="0">× 없다</button></div>
+    <div class="verdict" id="verdict"></div>
+  </section>
+
+  <section class="cta">
+    <h2>매주 금요일, 유플릿 장부가 올라와요</h2>
+    <p>광고비·리드·상담·개통 네 숫자를 그대로요. 잘 되면 이유를, 안 되면 이유를 더 자세히 써요. 12월 31일에 결산해요.</p>
+    <a class="btn" href="https://www.instagram.com/unansang/">유난상 팔로우하고 금요일 장부 받기</a>
+    <p class="fine">다음 편은 이 표 채우는 법이에요. 숫자 네 개로 사업 줄 세우기.</p>
+  </section>
+
+  <p class="fine">저는 유플릿의 마케팅과 상담 연결을 맡고 있어요. 유플릿은 베가네트웍스(LG유플러스 공식 파트너·대리점)의 브랜드예요. 이 페이지는 자료이고 판매 페이지가 아니에요.</p>
+</main>
+
+<footer>© 유난상 · 유난한 상인 · 2026-10-22 기준</footer>
+</div>
+
+<script>
+(function(){
+  var vals=[null,null,null,null];
+  var names=['남는가','도는가','쌓이는가','상대가 있는가'];
+  var tips=[
+    '원가와 판매가를 숫자로 적는 것부터예요. 모르는 사업은 좋은 사업인지도 몰라요.',
+    '돈이 들어오는 주기가 길면 그 사이를 버틸 현금이 따로 있어야 해요. 그 현금이 어디서 오는지 먼저 정하세요.',
+    '재고는 돈이 창고에 들어가 앉는 거예요. 재고 없이 시작할 방법(선주문·위탁·소량)이 있는지 먼저 보세요.',
+    '마감을 걸어 줄 상대를 먼저 만드세요. 고객 1명, 파트너 1명, 발행 약속 1개. 준비가 끝나고 상대를 찾는 순서는 거의 멈춰요.'
+  ];
+  var segs=document.querySelectorAll('.seg');
+  Array.prototype.forEach.call(segs,function(seg){
+    var k=+seg.getAttribute('data-k');
+    Array.prototype.forEach.call(seg.querySelectorAll('button'),function(b){
+      b.addEventListener('click',function(){
+        Array.prototype.forEach.call(seg.querySelectorAll('button'),function(x){x.classList.remove('on')});
+        b.classList.add('on'); vals[k]=+b.getAttribute('data-v'); render();
+      });
+    });
+  });
+  function render(){
+    var box=document.getElementById('verdict');
+    if(vals.some(function(v){return v===null})) return;
+    var name=(document.getElementById('biz').value||'이 사업').trim();
+    var fails=[],sos=[];
+    vals.forEach(function(v,i){ if(v===0) fails.push(i); else if(v===1) sos.push(i); });
+    var h='';
+    if(!fails.length && !sos.length){
+      h='<b>'+name+' — 네 칸 다 통과예요!</b>이런 건 12개 중에 하나였어요. 지금 이걸 안 하고 뭘 하고 있는지 보세요.';
+    } else if(!fails.length){
+      h='<b>'+name+' — 탈락은 없고 애매한 칸이 '+sos.length+'개예요.</b>'+sos.map(function(i){return '· '+names[i]+': '+tips[i];}).join('<br>');
+    } else {
+      h='<b>'+name+' — '+fails.map(function(i){return names[i]}).join(', ')+'에서 떨어져요.</b>'+fails.map(function(i){return '· '+names[i]+': '+tips[i];}).join('<br>');
+      if(fails.indexOf(3)>=0) h+='<br><br>④가 ×면 다른 칸이 다 ○여도 중간에 멈출 확률이 제일 높아요. 제 북마크 9년치가 그랬어요.';
+    }
+    box.innerHTML=h; box.style.display='block';
+  }
+  document.getElementById('biz').addEventListener('input',render);
+})();
+</script>
+</body>
+</html>
