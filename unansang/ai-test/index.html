@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI한테 먼저 넘길 일 찾기 · 유난상</title>
+<meta name="description" content="질문 7개로 내 가게에서 AI한테 먼저 넘길 일 하나를 찾아요.">
+<meta property="og:title" content="AI한테 먼저 넘길 일 찾기 — 질문 7개">
+<meta property="og:description" content="사람 한 명 몫, 내 가게에선 AI한테 뭘 먼저 넘길지 1분이면 나와요.">
+<meta name="robots" content="noindex">
+<style>
+:root{--cream:#FAF6EF;--ink:#1A1A1E;--muted:#7A7A84;--line:#E0DAD0;--hl:#FFE14D;--orange:#E8620A}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.6;-webkit-text-size-adjust:100%}
+main{max-width:560px;margin:0 auto;padding:28px 16px 64px}
+.chip{display:inline-block;border:1.5px solid var(--ink);border-radius:6px;padding:2px 10px;font-size:13px;font-weight:700}
+h1{font-size:26px;line-height:1.35;margin:14px 0 8px}
+mark{background:linear-gradient(transparent 55%,var(--hl) 55%);color:inherit}
+.lead{color:var(--muted);margin:0 0 24px}
+.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin:8px 0 22px}
+.bar i{display:block;height:100%;background:var(--ink);width:0;transition:width .25s}
+.qnum{font-size:14px;color:var(--muted);font-weight:700}
+.q{font-size:21px;font-weight:800;margin:6px 0 16px;line-height:1.4}
+button.opt{display:block;width:100%;text-align:left;font:inherit;font-size:16px;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;margin:0 0 10px;color:var(--ink);cursor:pointer}
+button.opt:hover,button.opt:focus{border-color:var(--ink);outline:none}
+.back{background:none;border:0;color:var(--muted);font:inherit;font-size:14px;padding:6px 0;cursor:pointer}
+.card{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:18px;margin:0 0 14px}
+.card h3{margin:0 0 6px;font-size:15px;color:var(--muted)}
+.card p,.card li{margin:0;font-size:16px}
+.card ol{margin:0;padding-left:20px}
+.res-name{font-size:25px;font-weight:900;line-height:1.35;margin:10px 0 6px}
+.cta{display:block;text-align:center;background:var(--ink);color:#fff;text-decoration:none;font-weight:800;border-radius:12px;padding:16px;margin:22px 0 8px;font-size:17px}
+.small{font-size:13px;color:var(--muted)}
+.again{display:block;margin:14px auto 0}
+</style>
+</head>
+<body>
+<main>
+  <section id="intro">
+    <span class="chip">유난상 · 질문 7개</span>
+    <h1>사람 한 명 몫,<br>내 가게에선 AI한테 <mark>뭘 먼저 넘길까</mark></h1>
+    <p class="lead">고르기만 하면 돼요. 1분이면 "먼저 넘길 일 하나"와 오늘 바로 해 볼 첫 단계가 나와요. 이름이나 연락처는 묻지 않아요.</p>
+    <button class="opt" id="start" style="text-align:center;font-weight:800;background:var(--ink);color:#fff;border-color:var(--ink)">시작하기</button>
+  </section>
+
+  <section id="quiz" hidden>
+    <div class="qnum" id="qnum"></div>
+    <div class="bar"><i id="prog"></i></div>
+    <div class="q" id="qtext"></div>
+    <div id="opts"></div>
+    <button class="back" id="back">← 이전 질문</button>
+  </section>
+
+  <section id="result" hidden>
+    <span class="chip">내 결과</span>
+    <div class="res-name" id="rname"></div>
+    <div class="card"><h3>이런 분이에요</h3><p id="rwho"></p></div>
+    <div class="card"><h3>AI한테 먼저 넘길 일</h3><p id="rtask"></p></div>
+    <div class="card"><h3>유난상은 이렇게 돌려요</h3><p id="rhow"></p></div>
+    <div class="card"><h3>이건 넘기지 마세요</h3><p id="rkeep"></p></div>
+    <div class="card"><h3>오늘 바로 해 볼 첫 단계</h3><p id="rstep"></p></div>
+    <div class="card"><h3>같이 세팅하면 4주는 이렇게 가요</h3><ol id="rpt"></ol></div>
+    <a class="cta" href="https://open.kakao.com/o/gWNkJcBi" target="_blank" rel="noopener">결과 들고 오픈채팅방에서 같이 보기</a>
+    <p class="small">결과 화면을 캡처해서 "유난한 상인들의 방"에 올려 주세요. 진단 60분 대기명단도 방에서 받아요. 시간이나 돈이 얼마 줄어든다고는 약속하지 않아요.</p>
+    <button class="back again" id="again">처음부터 다시 하기</button>
+  </section>
+</main>
+<script>
+const Q = [{"title": "아침에 눈 뜨면 제일 먼저 여는 화면은?", "options": [["메일이나 카톡. 밤사이 문의 왔나부터 봐요", "inbox"], ["광고 관리자. 어제 돈 얼마 나갔나 봐요", "ads"], ["인스타나 블로그 앱. 오늘 뭐 올리지 생각해요", "content"], ["스토어나 홈페이지. 밤사이 주문이나 신청 들어왔나 봐요", "landing"]]}, {"title": "요즘 \"돈이 새는 것 같다\" 싶은 순간은?", "options": [["팔고 나서 계산해 보니 남는 게 거의 없을 때", "cost"], ["광고비는 나갔는데 문의가 안 올 때", "ads"], ["들어와서 보기는 하는데 신청을 안 할 때", "landing"], ["문의가 왔는데 늦게 봐서 놓쳤을 때", "inbox"]]}, {"title": "하루 중에 제일 미루게 되는 일은?", "options": [["오늘 올릴 글이나 사진", "content"], ["견적서나 원가 엑셀 정리", "cost"], ["쌓여 있는 문의 답장", "inbox"], ["이번 주에 뭐부터 할지 정하는 것", "brief"]]}, {"title": "이틀 동안 자리를 비워야 한다면 제일 걱정되는 건?", "options": [["답 못 한 문의가 쌓이는 것", "inbox"], ["광고가 혼자 돌면서 돈만 나가는 것", "ads"], ["돌아와서 뭐부터 해야 할지 모르는 것", "brief"], ["신청이 들어와도 내가 모르는 것", "landing"]]}, {"title": "일 잘하는 직원이 딱 한 명 생기면 맡기고 싶은 일은?", "options": [["가격 비교하고 원가 계산하는 일", "cost"], ["글 쓰고 사진 올리는 일", "content"], ["신청 페이지랑 신청서를 정리하는 일", "landing"], ["매일 숫자 정리해서 한 장으로 보고하는 일", "brief"]]}, {"title": "최근에 이런 적 있으세요? 하나만 고르면", "options": [["사려다가 계산해 보니 적자라서 접었다", "cost"], ["같은 질문에 같은 답을 몇 번씩 했다", "inbox"], ["광고를 언제 끄고 언제 켤지 감으로 정했다", "ads"], ["할 일 목록만 길어지고 줄지를 않는다", "brief"]]}, {"title": "한 달 뒤에 제일 듣고 싶은 말은?", "options": [["\"신청이 알아서 쌓이고 있어요\"", "landing"], ["\"매일 뭔가 올라가 있네요\"", "content"], ["\"사기 전에 남는지 안 남는지 바로 나와요\"", "cost"], ["\"오늘 뭐부터 할지 아침에 정해져 있어요\"", "brief"]]}];
+const T = {"inbox": {"name": "「문의함 지키기」부터 넘기세요", "who": "일은 잘하는데 답이 늦어서 손님을 놓치는 분이에요. 문의는 오는데, 일하다 보면 메일이랑 카톡이 뒤로 밀리죠.", "first_task": "들어온 문의 중에 진짜 손님만 골라서 바로 알려 주는 일.", "how_we_run": "바이어 메일함을 AI가 2시간마다 훑어요. 광고나 스팸은 빼고, 진짜 문의만 골라서 제 폰으로 알림을 보내요. 이미 알린 건 다시 안 알려요.", "keep_human": "답장 보내기. AI가 초안은 쓰지만, 보내는 건 제가 해요. 저희 회사는 메일 자동 발송을 막아 놨어요.", "first_step": "지난 2주 문의를 다 꺼내서 세 칸으로 나눠 보세요. 진짜 손님, 광고·스팸, 기존 거래처. 진짜 손님이 몇 통인지 숫자가 나오면, AI한테 넘길 기준이 생겨요.", "pt_4weeks": ["1주: 문의가 들어오는 곳을 다 적어요.", "2~3주: 골라내는 기준과 알림을 세팅해요.", "4주: 사장님이 자리를 비운 날에도 진짜 문의 알림이 오는지 확인해요."]}, "cost": {"name": "「원가 계산」부터 넘기세요", "who": "싸게 사 온 것 같은데 팔고 나면 남는 게 없는 분이에요. 도매가는 보이는데 그 뒤에 붙는 돈이 안 보이죠.", "first_task": "가격표 하나를 내 통장 원가까지 끝까지 계산하는 일.", "how_we_run": "1688 링크를 붙이면 AI가 모르는 칸부터 저한테 물어봐요. 그리고 사지 말아야 할 이유를 먼저 알려 줘요. 중국 7년 동안 제가 돈 내고 배운 계산을 그대로 맡겨 둔 거예요.", "keep_human": "발주 결정. 계산은 AI가 하고, 사는 건 사장님이 정해요.", "first_step": "다음에 사려는 품목 하나로 여섯 칸을 채워 보세요. 중국 내륙 배송비, 대행 수수료, 관세, 부가세, 판매 수수료, 광고비. 한 칸이라도 모르면 아직 사면 안 되는 거예요.", "pt_4weeks": ["1주: 사장님 품목의 실제 비용 칸을 다 모아요.", "2~3주: 링크만 넣으면 계산이 나오게 세팅해요.", "4주: 지난 발주 하나를 다시 넣어서 실제 정산이랑 맞춰 봐요."]}, "content": {"name": "「콘텐츠 줄 세우기」부터 넘기세요", "who": "올려야 하는 건 아는데 매일 \"오늘 뭐 쓰지\"에서 멈추는 분이에요. 바쁜 주에는 계정이 조용해지죠.", "first_task": "글을 미리 써서 줄 세워 두고, 정한 시각에 올라가게 하는 일.", "how_we_run": "스레드랑 블로그 글은 미리 큐에 쌓아 두면 예약 시각에 올라가요. 인스타는 제가 일주일에 한 번 몰아서 승인해요.", "keep_human": "처음 보는 사람한테 나가는 첫 문장과 승인. 브랜드 목소리는 사장님 거예요.", "first_step": "다음 주에 올릴 글 제목 7개만 먼저 적어 두세요. \"오늘 뭐 쓰지\"가 없어지면, 그다음부터는 AI가 써서 줄을 세울 수 있어요.", "pt_4weeks": ["1주: 사장님 말투와 소재 창고를 정리해요.", "2~3주: 원고와 예약 큐를 세팅해요.", "4주: 사장님이 승인만 하는데도 한 주가 채워지는지 확인해요."]}, "ads": {"name": "「광고 아침 보고」부터 넘기세요", "who": "광고는 돌리는데 언제 끄고 언제 켤지 감으로 정하는 분이에요. 관리자 화면을 하루에도 몇 번씩 열죠.", "first_task": "광고 숫자를 매일 같은 틀로 보고 받고, 이상할 때만 알림 받는 일.", "how_we_run": "낮 동안 2시간마다 AI가 광고 계정을 훑어요. 이상할 때만 알림이 오고, 정상이면 아무것도 안 와요. 예산이나 켜고 끄는 건 AI가 손대지 않아요.", "keep_human": "예산 바꾸기와 광고 켜고 끄기. 돈이 움직이는 일이에요.", "first_step": "어제 광고비, 노출, 클릭, 문의 수, 이 네 칸만 매일 같은 시각에 적어 보세요. 일주일이면 \"이상하다\"의 기준이 생겨요.", "pt_4weeks": ["1주: 사장님 광고 계정의 기준 숫자를 잡아요.", "2~3주: 아침 보고와 이상 알림을 세팅해요.", "4주: 관리자 화면을 안 열고도 하루 판단이 되는지 확인해요."]}, "landing": {"name": "「신청 받는 페이지」부터 넘기세요", "who": "사람은 들어오는데 신청이 안 쌓이는 분이에요. 아니면 신청이 와도 어디로 왔는지 모르죠.", "first_task": "신청 페이지 한 장을 정리하고, 신청이 들어오면 장부에 쌓이고 바로 알림이 오게 하는 일.", "how_we_run": "저희 홈페이지에 상담 신청이 들어오면 장부에 바로 저장되고, 제 폰으로 알림이 와요. 어느 광고, 어느 글을 보고 왔는지도 같이 남아요.", "keep_human": "가격과 약속 문구. 페이지에 적힌 약속은 사장님이 지켜야 하는 거예요.", "first_step": "지금 신청 페이지를 폰으로 열어 보세요. 첫 화면에 \"누구에게, 뭘, 어떻게 신청하는지\" 세 가지가 다 보이는지 확인해 보세요. 하나라도 스크롤해야 보이면 거기부터예요.", "pt_4weeks": ["1주: 지금 페이지의 첫 화면과 신청 흐름을 진단해요.", "2~3주: 페이지 한 장, 신청서, 장부, 알림을 세팅해요.", "4주: 실제 신청 한 건이 장부와 알림까지 오는지 확인해요."]}, "brief": {"name": "「아침 한 장 보고」부터 넘기세요", "who": "할 일은 많은데 뭐부터 할지 정하는 데 아침을 다 쓰는 분이에요. 목록은 길어지는데 줄지를 않죠.", "first_task": "어제 일과 오늘 정할 것을 아침마다 한 장으로 받는 일.", "how_we_run": "저희 회사는 여섯 팀 보고가 아침 7시에 한 장으로 와요. 돈이 나가거나 밖으로 나가는 일은 선택지와 추천이 붙은 결재판으로만 올라오고요. \"어떻게 할까요\"는 못 올리게 해 놨어요.", "keep_human": "결재. 정하는 건 사장님이에요. AI는 고를 수 있게 차려 놓기만 해요.", "first_step": "할 일 목록을 두 칸으로 나눠 보세요. 되돌릴 수 있는 일, 그리고 돈이 나가거나 밖으로 나가는 일. 앞 칸은 맡겨도 되는 일이고, 사장님이 볼 건 뒤 칸뿐이에요.", "pt_4weeks": ["1주: 사장님 하루 일을 두 칸으로 나눠요.", "2~3주: 아침 보고 한 장과 결재 규칙을 세팅해요.", "4주: 보고만 보고 하루 순서가 정해지는지 확인해요."]}};
+let picks = [];
+const $ = id => document.getElementById(id);
+
+function show(id) { ["intro", "quiz", "result"].forEach(s => $(s).hidden = s !== id); window.scrollTo(0, 0); }
+
+function render() {
+  const i = picks.length;
+  if (i === Q.length) return finish();
+  $("qnum").textContent = `${i + 1} / ${Q.length}`;
+  $("prog").style.width = `${(i / Q.length) * 100}%`;
+  $("qtext").textContent = Q[i].title;
+  $("opts").innerHTML = "";
+  Q[i].options.forEach(([label, type]) => {
+    const b = document.createElement("button");
+    b.className = "opt";
+    b.textContent = label;
+    b.onclick = () => { picks.push(type); render(); };
+    $("opts").appendChild(b);
+  });
+  $("back").hidden = i === 0;
+}
+
+// 최다 득점 유형. 동점이면 가장 뒤 문항에서 고른 유형 (check_test.py 와 같은 규칙)
+function decide(p) {
+  const n = {};
+  p.forEach(t => n[t] = (n[t] || 0) + 1);
+  const top = Math.max(...Object.values(n));
+  for (let i = p.length - 1; i >= 0; i--) if (n[p[i]] === top) return p[i];
+}
+
+function finish() {
+  const r = T[decide(picks)];
+  $("rname").textContent = r.name;
+  $("rwho").textContent = r.who;
+  $("rtask").textContent = r.first_task;
+  $("rhow").textContent = r.how_we_run;
+  $("rkeep").textContent = r.keep_human;
+  $("rstep").textContent = r.first_step;
+  $("rpt").innerHTML = "";
+  r.pt_4weeks.forEach(w => { const li = document.createElement("li"); li.textContent = w; $("rpt").appendChild(li); });
+  show("result");
+}
+
+$("start").onclick = () => { picks = []; show("quiz"); render(); };
+$("back").onclick = () => { picks.pop(); render(); };
+$("again").onclick = () => { picks = []; show("quiz"); render(); };
+</script>
+</body>
+</html>
